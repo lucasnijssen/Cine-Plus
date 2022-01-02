@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <div class="loader">
+      <div></div>
+    </div>
     
     
     <div class="content">
@@ -219,6 +223,11 @@
           nav.classList.remove('nav__black');
         }
       });
+    
+      $(window).on('load',function(){
+            $(".loader").fadeOut(1000);
+            $(".content").fadeIn(1000);
+        });
     </script>
 
     
