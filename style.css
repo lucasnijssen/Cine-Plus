@@ -67,11 +67,11 @@ body {
 }
 
 .banner__description {
-  width: 40rem;
+  width: 30rem;
   line-height: 1.3;
   padding-top: 1rem;
   font-size: 0.8rem;
-  max-width: 330px;
+  max-width: 300px;
   height: 180px;
 }
 
