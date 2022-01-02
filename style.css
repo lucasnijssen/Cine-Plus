@@ -131,10 +131,6 @@ body {
   background-color: rgb(238, 238, 238);
 }
 
-body {
-  text-align: center;
-  background-color: #eee;
-}
 
 * {
   -webkit-box-sizing: border-box;
@@ -172,7 +168,7 @@ body {
 
   border-radius: 5px;
 
-  background-color: #1e3f57;
+  background-color: #c50000;
 
   transform-type: preserve-3d;
 
@@ -190,7 +186,7 @@ body {
   
   border-radius: 3px;
   
-  background-color: #3c617d;
+  background-color: #c50000;
   
   animation-name: dot2;
 }
@@ -206,7 +202,7 @@ body {
   
   border-radius: 0 0 5px 5px;
   
-  background-color: #6bb2cd;
+  background-color: #c50000;
   
   animation-name: dot3;
 }
