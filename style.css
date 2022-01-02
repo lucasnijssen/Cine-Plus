@@ -125,7 +125,7 @@ body {
   z-index: 1;
   transition-timing-function: ease-in;
   transition: all 0.5s;
-  background-image: linear-gradient(360deg, transparent, rgba(0, 0, 0, 0.164), #111);
+  background-image: linear-gradient(360deg, transparent, rgba(255, 255, 255, 0.178), rgb(238, 238, 238));
 }
 
 .nav__black {
