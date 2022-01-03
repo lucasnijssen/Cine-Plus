@@ -77,7 +77,7 @@ function load_video(){
     console.log(getUrlVars()["v"]);
     console.log(getUrlVars()["mudo"]);
     
-    if (getUrlVars()["v"] != undefined) video.src = getUrlVars()["v"];
+    if (getUrlVars()["v"] != undefined) video.src = getUrlVars()["v"]; video.play();
     if (getUrlVars()["mudo"] != undefined) video.volume = 0;
     if (getUrlVars()["nome"] != undefined){ 
         document.getElementById("nome").innerHTML = decodeURI(getUrlVars()["nome"]);
