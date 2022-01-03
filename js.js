@@ -70,6 +70,7 @@ function getUrlVars() {
     });
     return vars;
 }
+
 video.volume = 1;
 function load_video(){
     console.log(video.src);
@@ -97,6 +98,9 @@ function volume(){
 }
 function replay(n){
     video.currentTime -= n;
+}
+function forward(n){
+    video.currentTime += n;
 }
 function key()
 	{
