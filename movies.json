@@ -1,0 +1,6 @@
+[
+    {"name" : "HP1", "cdn" : "https://cdn.gewoonboyke.nl/movies/HPDHP1.mp4", "title" : "Harry Potter Deadly Hallows Part 1"},
+    {"name" : "HP2", "cdn" : "https://cdn.gewoonboyke.nl/movies/HPDHP2.mp4", "title" : "Harry Potter Deadly Hallows Part 2"},
+    {"name" : "ALGO", "cdn" : "https://vdn.libreflix.org/video/algorithm-o-filme-hacker/algorithm-o-filme-hacker.1080.mp4", "title" : "Algorithm"},
+    {"name" : "LEGION", "cdn" : "https://vdn.libreflix.org/video/we-are-legion/we-are-legion.480.mp4", "title" : "We are Legion"}
+]

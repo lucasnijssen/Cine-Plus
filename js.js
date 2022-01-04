@@ -1,5 +1,30 @@
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("play");
+loadjson();
+async function loadjson(movie, cdn, title){
+    let object;
+    let httpRequest = new XMLHttpRequest(); // asynchronous request
+    httpRequest.open("GET", "movies.json", true);
+    httpRequest.send();
+    httpRequest.addEventListener("readystatechange", function() {
+        if (this.readyState === this.DONE) {
+            // when the request has completed
+            object = JSON.parse(this.response);
+            for(var i = 0; i < object.length; i++){
+                if(object[i].name == getUrlVars()["iv"]){
+                    setInformation(object[i].title, object[i].cdn, object[i].name)
+                }
+            }
+        }
+    });
+}
+async function setInformation(title, cdn, movie){
+    video.src = cdn; 
+    document.getElementById("vidtitle").innerHTML = title;
+    document.getElementById("vidtitle2").innerHTML = title;
+    document.title = "CinePlus - " + title; 
+    settime();
+}
 
 function play() {
   if (video.paused) {
@@ -74,18 +99,25 @@ function getUrlVars() {
 video.volume = 1;
 function load_video(){
     console.log(video.src);
-    console.log(getUrlVars()["v"]);
-    console.log(getUrlVars()["mudo"]);
     
     if (getUrlVars()["v"] != undefined) video.src = getUrlVars()["v"]; video.play();
-    if (getUrlVars()["mudo"] != undefined) video.volume = 0;
-    if (getUrlVars()["nome"] != undefined){ 
-        document.getElementById("nome").innerHTML = decodeURI(getUrlVars()["nome"]);
-        document.getElementById("nome2").innerHTML = decodeURI(getUrlVars()["nome"]);
-        document.title = "Netflix - "+decodeURI(getUrlVars()["nome"]);
-      }
+    if (getUrlVars()["muted"] != undefined) video.volume = 0;
       
 }
+function settime(){
+    var video= document.getElementById("myVideo");
+       
+    setInterval(function(){
+        countdown = video.duration - video.currentTime
+      var date = new Date(0);
+      var date2 = new Date(0);
+      date.setSeconds(countdown);
+      date2.setSeconds(video.currentTime);
+      var timeString = date.toISOString().substr(11, 8);
+      var timeString2 = date2.toISOString().substr(11, 8);
+      document.getElementById("time").innerHTML= timeString + " / " + timeString2;
+      },1000);
+  }
 
 function volume(){
     if (video.volume == 0) {
