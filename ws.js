@@ -1,6 +1,6 @@
 //Hier komt de websocket connection code
 
-const ws = new WebSocket("ws://wings5.dixiehosting.nl:9020/server");
+const ws = new WebSocket("wss://ws.dixiehosting.nl");
 
 
 function getUrlVars2() {
