@@ -9,7 +9,7 @@ body {
 }
 
 .row__poster {
-  width: 100%;
+  width: auto;
   object-fit: contain;
   max-height: 100px;
   margin-right: 10px;
@@ -32,7 +32,7 @@ body {
 }
 
 .row_posterLarge {
-  max-height: 260px;
+  max-height: 250px;
 }
 
 .row_posterLarge:hover {
