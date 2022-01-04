@@ -1,23 +1,23 @@
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("play");
-loadjson();
-async function loadjson(movie, cdn, title){
-    let object;
-    let httpRequest = new XMLHttpRequest(); // asynchronous request
-    httpRequest.open("GET", "movies.json", true);
-    httpRequest.send();
-    httpRequest.addEventListener("readystatechange", function() {
-        if (this.readyState === this.DONE) {
-            // when the request has completed
-            object = JSON.parse(this.response);
-            for(var i = 0; i < object.length; i++){
-                if(object[i].name == getUrlVars()["iv"]){
-                    setInformation(object[i].title, object[i].cdn, object[i].name)
-                }
-            }
-        }
-    });
-}
+// loadjson();
+// async function loadjson(movie, cdn, title){
+//     let object;
+//     let httpRequest = new XMLHttpRequest(); // asynchronous request
+//     httpRequest.open("GET", "movies.json", true);
+//     httpRequest.send();
+//     httpRequest.addEventListener("readystatechange", function() {
+//         if (this.readyState === this.DONE) {
+//             // when the request has completed
+//             object = JSON.parse(this.response);
+//             for(var i = 0; i < object.length; i++){
+//                 if(object[i].name == getUrlVars()["iv"]){
+//                     setInformation(object[i].title, object[i].cdn, object[i].name)
+//                 }
+//             }
+//         }
+//     });
+// }
 async function setInformation(title, cdn, movie){
     video.src = cdn; 
     document.getElementById("vidtitle").innerHTML = title;
@@ -98,7 +98,12 @@ function getUrlVars() {
 
 video.volume = 1;
 function load_video(){
-    console.log(video.src);
+    console.log(video.src + "123");
+
+    if(video.src == window.location.href){
+      setInformation("Er ging iets fout!", "https://cdn.gewoonboyke.nl/movies/error.mp4", "testing");
+      video.loop = true;
+    }
     
     if (getUrlVars()["v"] != undefined) video.src = getUrlVars()["v"]; video.play();
     if (getUrlVars()["muted"] != undefined) video.volume = 0;
@@ -179,3 +184,10 @@ video.ontimeupdate = function(){
   video_slider.value = Math.round(video.currentTime);
   slider_css(); 
 }
+
+video.addEventListener('ended', function () {
+  if(video.src == "https://cdn.gewoonboyke.nl/movies/error.mp4"){
+    const url = window.location.origin
+    window.location.replace(url);
+  }
+}, false);

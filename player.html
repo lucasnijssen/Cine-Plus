@@ -57,7 +57,7 @@
             <div class="tooltip"><i class="material-icons" style="font-size: 40px;padding: 10px;">help_outline</i>
                 <span class="tooltiptext">Version 1.1</span>
               </div>
-        <i class="material-icons" style="font-size: 40px;padding: 10px;">subtitles</i>  
+        <i onclick="WebSocketTest()" class="material-icons" style="font-size: 40px;padding: 10px;">subtitles</i>  
         <i id="full" onclick="full()" class="material-icons" style="font-size: 40px;padding: 10px;">fullscreen</i>
     </div>
 </div>
@@ -84,8 +84,10 @@ if ("serviceWorker" in navigator) {
   }
 }
 </script>
+<script src="ws.js"></script>
 <script src="vibra.js"></script>
 <script src="js.js"></script>
+
 
 </body>
 </html>
