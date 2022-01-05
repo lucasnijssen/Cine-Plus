@@ -20,6 +20,7 @@ var btn = document.getElementById("play");
 // }
 async function setInformation(title, cdn, movie){
     video.src = cdn; 
+    video.loop = false;
     document.getElementById("vidtitle").innerHTML = title;
     document.getElementById("vidtitle2").innerHTML = title;
     document.title = "CinePlus - " + title; 
@@ -184,6 +185,8 @@ video.ontimeupdate = function(){
 }
 
 video.addEventListener('ended', function () {
+  video.pause();
+  btn.innerHTML = "play_arrow";
   if(video.src == "https://cdn.gewoonboyke.nl/movies/error.mp4"){
     const url = window.location.origin
     window.location.replace(url);
