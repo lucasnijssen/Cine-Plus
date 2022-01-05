@@ -98,8 +98,6 @@ function getUrlVars() {
 
 video.volume = 1;
 function load_video(){
-    console.log(video.src + "123");
-
     if(video.src == window.location.href){
       setInformation("Er ging iets fout!", "https://cdn.gewoonboyke.nl/movies/error.mp4", "testing");
       video.loop = true;

@@ -33,12 +33,11 @@ ws.onopen = () => {
       alert("Connection test successvol!");
     }
     if(obj.info == "movie-data"){
-        console.log(obj.cdn);
         setInformation(obj.title, obj.cdn, "testing");
       }
   };
 
-  ws.onclose = () => console.log("WebSocket closed!");
+  ws.onclose = () => console.log("Well, you don`t need me anymore, im out! Goodbye client!");
 
   function WebSocketTest() {
     ws.send(JSON.stringify({
