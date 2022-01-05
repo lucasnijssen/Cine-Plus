@@ -133,6 +133,18 @@ body {
 }
 
 
+.popup{
+  display: none;
+}
+
+.popup{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #16191ee0;
+  position: absolute;
+}
+
 .content{
   display: none;
 }
@@ -162,6 +174,27 @@ body {
       transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .modal-open {
   overflow: hidden;
 }
