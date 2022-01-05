@@ -146,15 +146,12 @@ body {
   overflow: hidden;
   background-color: #16191ee0;
   position: absolute;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
 }
 
 .popup__contents{
   object-fit: contain;
   color: #fff;
-  height: 448px;
+  height: 500px;
   width: 500px;
 }
 
@@ -163,6 +160,9 @@ body {
   background-position: center center;
   border: 3px solid #111;
   border-radius: 8px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .popup__title{
