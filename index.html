@@ -45,10 +45,20 @@
   </head>
   <body>
 
+    <!-- loader -->
     <div class="loader">
       <div></div>
     </div>
     
+    <!-- popup -->
+    <div class="popup">
+     <div class="popup__contents">
+      <div class="popup_border">
+       <h1 class="popup__title">algorithem hacker</h1>
+      </div>
+     </div>
+    </div>
+
     
     <div class="content">
     <!-- nav -->
@@ -63,7 +73,7 @@
         <h1 class="banner__title">algorithm hacker</h1>
         <div class="banner__buttons">
           <button onclick="window.location.href='/player.html?iv=wWyq5HGF00j1F9F0wC';" class="banner__button">Play</button>
-          <button class="banner__button">My List</button>
+          <button onclick="$('.popup').fadeIn(2500);" class="banner__button">My List</button>
         </div>
         <h1 class="banner__description">
           A freelance computer hacker discovers a mysterious government computer program.

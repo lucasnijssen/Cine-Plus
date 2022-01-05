@@ -133,6 +133,47 @@ body {
 }
 
 
+
+
+/* popup */
+.popup{
+  display: none;
+}
+
+.popup{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #16191ee0;
+  position: absolute;
+}
+
+.popup__contents{
+  object-fit: contain;
+  color: #fff;
+  height: 500px;
+  width: 500px;
+}
+
+.popup__border{
+  background-color: #111;
+  background-position: center center;
+  border: 3px solid #111;
+  border-radius: 8px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.popup__title{
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+
+
+/* loader */
 .content{
   display: none;
 }
@@ -162,6 +203,27 @@ body {
       transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .modal-open {
   overflow: hidden;
 }
