@@ -6,7 +6,7 @@
     <link rel="icon" href="favicon.ico" />
     <link rel='manifest' href='manifest.webmanifest'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/player.css">
+<link rel="stylesheet" href="/css/player.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
  <div style="position:fixed; height:100%; width:100%; background-color: black;top:0;left:0; z-index:999; opacity: 0.8;" id="turn">
@@ -74,7 +74,7 @@ if ("serviceWorker" in navigator) {
   } else {
     // Register the service worker
     navigator.serviceWorker
-      .register("JS/pwabuilder-sw.js", {
+      .register("/JS/pwabuilder-sw.js", {
         scope: "./"
       })
       .then(function (reg) {
@@ -83,8 +83,8 @@ if ("serviceWorker" in navigator) {
   }
 }
 </script>
-<script src="JS/ws.js"></script>
-<script src="JS/js.js"></script>
+<script src="/JS/ws.js"></script>
+<script src="/JS/js.js"></script>
 
 
 </body>
