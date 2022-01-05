@@ -133,6 +133,9 @@ body {
 }
 
 
+
+
+/* popup */
 .popup{
   display: none;
 }
@@ -145,6 +148,25 @@ body {
   position: absolute;
 }
 
+.popup__contents{
+  background-color: #ff0000;
+  background-size: cover;
+  background-position: center center;
+  object-fit: contain;
+  height: 448px;
+  width: 500px;
+
+}
+
+.popup__title{
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+
+
+/* loader */
 .content{
   display: none;
 }
