@@ -19,12 +19,40 @@ var btn = document.getElementById("play");
 //     });
 // }
 async function setInformation(title, cdn, movie){
-    video.src = cdn; 
-    video.loop = false;
-    document.getElementById("vidtitle").innerHTML = title;
-    document.getElementById("vidtitle2").innerHTML = title;
-    document.title = "CinePlus - " + title; 
-    settime();
+
+  video.src = cdn; 
+  video.loop = false;
+  console.log(video.readyState);
+  const load = setInterval(function(){
+    if(video.readyState === 0){
+      setLoading(title);
+      return;
+    }
+    if(video.readyState === 4 || video.currentTime < 0.01){
+      document.getElementById("vidtitle").innerHTML = title;
+      document.getElementById("vidtitle2").innerHTML = title;
+      document.getElementById("loading").style.display = "none";
+      document.title = "CinePlus - " + title; 
+      settime();
+      clearInterval(load);
+      return;
+    }
+  },1000);
+
+  setTimeout(function(){
+    if(video.readyState === 0){
+      document.getElementById("errMes").style.display = "";
+      return;
+    }
+  }, 10000);
+
+
+}
+
+function setLoading(title){
+  document.getElementById("vidtitle").innerHTML = title;
+  document.getElementById("vidtitle2").innerHTML = title;
+  document.title = "CinePlus - " + title; 
 }
 
 function play() {

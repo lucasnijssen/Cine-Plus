@@ -1,5 +1,3 @@
-//Hier komt de websocket connection code
-
 const ws = new WebSocket("wss://ws.dixiehosting.nl");
 
 

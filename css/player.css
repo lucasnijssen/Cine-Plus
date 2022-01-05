@@ -140,3 +140,51 @@ a:hover{
     border-radius: 50%;
     -webkit-appearance: none;
   }
+  .loader{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #000000;
+    position: absolute;
+    z-index: 1;
+  }
+  .loader>div{
+    height: 100px;
+    width: 100px;
+    border: -2px solid #45474b;
+    border-top-color: #fa1818;
+    position: absolute;
+    margin: auto;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    border-top-style: groove;
+    animation: spin 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  }
+  @keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+
+  .loadMessage{
+    height: 100px;
+    width: fit-content;
+    position: absolute;
+    margin: auto;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    color: #f1f1f1;
+  }
+  .errorMessage{
+    height: 100px;
+    width: fit-content;
+    position: absolute;
+    margin: auto;
+    bottom: 27%;
+    left: 0;
+    right: 0;
+    color: #f1f1f1;
+  }
