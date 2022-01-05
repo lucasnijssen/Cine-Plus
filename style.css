@@ -152,10 +152,6 @@ body {
 }
 
 .popup__contents{
-  background-color: #111;
-  background-position: center center;
-  border: 3px solid #111;
-  border-radius: 8px;
   object-fit: contain;
   color: #fff;
   height: 448px;
@@ -163,8 +159,10 @@ body {
 }
 
 .popup__border{
-
-  
+  background-color: #111;
+  background-position: center center;
+  border: 3px solid #111;
+  border-radius: 8px;
 }
 
 .popup__title{
