@@ -162,6 +162,11 @@ body {
   width: 500px;
 }
 
+.popup__border{
+
+  
+}
+
 .popup__title{
   font-size: 1rem;
   font-weight: 800;
