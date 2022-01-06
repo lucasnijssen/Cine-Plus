@@ -15,13 +15,7 @@ ws.onopen = () => {
           id: "hello",
           msg: "Hi, im the new client"
         }));
-
-        ws.send(JSON.stringify({
-            id: "movie-info",
-            msg: "Please give me the movie info",
-            movie: getUrlVars2()["iv"]
-          }));
-        console.log("requestion movie info");
+        console.log("[WSS] Connected");
   };
   ws.onmessage = (message) => {
     var obj = JSON.parse(message.data);
@@ -33,9 +27,6 @@ ws.onopen = () => {
       console.log("Test command was ran!")
       alert("Connection test successvol!");
     }
-    if(obj.info == "movie-data"){
-        setInformation(obj.title, obj.cdn, "testing");
-      }
   };
 
   const heartbeat = setInterval(function(){
@@ -45,7 +36,7 @@ ws.onopen = () => {
     }));
   },5000);
 
-  ws.onclose = () => console.log("Well, you don`t need me anymore, im out! Goodbye client!");
+  ws.onclose = () => console.log("[WSS] Disconnected");
 
   function WebSocketTest() {
     ws.send(JSON.stringify({
