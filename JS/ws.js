@@ -25,7 +25,10 @@ ws.onopen = () => {
   };
   ws.onmessage = (message) => {
     var obj = JSON.parse(message.data);
-    console.log(obj.msg)
+    if(getUrlVars2()["debug"] == true){
+      console.log(obj.msg);
+    }
+    
     if(obj.info == "recieved_test"){
       console.log("Test command was ran!")
       alert("Connection test successvol!");
