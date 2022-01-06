@@ -168,10 +168,40 @@ function forward(n){
 }
 function key()
 	{
-		if (event.keyCode == '32')
-		{
+		if (event.keyCode == '32'){
       play();
       hover();
+		}
+    if (event.keyCode == '39'){
+      //Doorspoelen arrow RIGHT
+      forward(5);
+		}
+    if (event.keyCode == '37'){
+      //Terugspoelen arrow LEFT
+      replay(5);
+		}
+    if (event.keyCode == '70'){
+      //Fullscreen F
+      full();
+		}
+    if (event.keyCode == '38'){
+      //volume up
+      if(video.volume >= 0.10000000000000014 && video.volume <= 0.9999999){
+        video.volume = video.volume + 0.1;
+        console.log(video.volume);
+      }
+      
+		}
+    if (event.keyCode == '40'){
+      //volume down
+      if(video.volume >= 0.10000000000000020 && video.volume <= 1.000){
+        video.volume = video.volume - 0.1;
+        console.log(video.volume);
+      }
+		}
+    if (event.keyCode == '77'){
+      //Mute M
+      volume();
 		}
   }
   // .firefox

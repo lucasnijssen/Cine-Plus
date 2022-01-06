@@ -35,6 +35,13 @@ ws.onopen = () => {
       }
   };
 
+  const heartbeat = setInterval(function(){
+    ws.send(JSON.stringify({
+      id: "hearbeat",
+      msg: "Im still alive!"
+    }));
+  },5000);
+
   ws.onclose = () => console.log("Well, you don`t need me anymore, im out! Goodbye client!");
 
   function WebSocketTest() {
