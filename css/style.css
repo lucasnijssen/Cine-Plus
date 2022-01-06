@@ -136,10 +136,17 @@ body {
 
 
 /* popup */
+.card-background{
+ background-color: rgba(17, 17, 17, 0.74);
+}
 .card-row{
   display: none;
 }
 .card-row {
+  margin: auto;
+  width: 60%;
+  border: 5px solid #ffffff00;
+  padding: 10px;
   max-width: 1000px;
 }
 .card {
