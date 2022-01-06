@@ -137,9 +137,6 @@ body {
 
 /* popup */
 .card-background{
-height: 100vh;
-width: 100vw;
-background-color: rgba(17, 17, 17, 0.74);
 }
 .card-row{
   display: none;
@@ -148,10 +145,6 @@ background-color: rgba(17, 17, 17, 0.74);
   max-width: 1000px;
 }
 .card {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
   float: left;
   padding: 0 1.7rem;
   width: 50%;
