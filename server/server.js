@@ -32,7 +32,6 @@ app.ws('/server', ws => {
 
 
       ws.on('message', msg => {
-          console.log('Received: ', msg);
           var obj2 = JSON.parse(msg);
           if(obj2.id == "hello"){
             ws.send(JSON.stringify({
@@ -43,6 +42,10 @@ app.ws('/server', ws => {
           }
           if(obj2.id == 'Test'){
             sendOne("recieved_test", "The test was well recieved!");
+            return;
+          }
+          if(obj2.id == 'hearbeat'){
+            sendOne("hearbeat_recieved", "I`m happy that ur alive :)");
             return;
           }
           if(obj2.id == 'movie-info'){
