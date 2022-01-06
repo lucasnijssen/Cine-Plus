@@ -22,6 +22,10 @@ ws.onopen = () => {
     if(getUrlVars2()["debug"] == "true"){
       console.log(obj.msg);
     }
+
+    if(obj.info == "movie-data"){
+      openModal(obj.title);
+    }
     
     if(obj.info == "recieved_test"){
       console.log("Test command was ran!")
