@@ -61,6 +61,31 @@ app.ws('/server', ws => {
                 });
             return;
           }
+          if(obj2.id == 'movie-card'){
+            con.query("SELECT * FROM `movies` WHERE `movie_id` = '" + obj2.movie + "'" , function (err, result, fields) {
+                if (result.length > 0) {
+                    ws.send(JSON.stringify({
+                      info: "movie-carddata",
+                      msg: "Here you go, this is all the information from the database!",
+                      desc: result[0].info,
+                      title: result[0].title,
+                      image: result[0].image
+                    }));
+                }
+                if (result.length < 1){
+                  ws.send(JSON.stringify({
+                    info: "movie-carddata",
+                    msg: "Here you go, this is all the information from the database!",
+                    desc: "Oei, er ging iets fout aan onze kant. We hebben geen film kunnen vinden in onze database. Probeer het later nog is of neem contact op met de helpdesk!",
+                    title: "Er ging even iets mis :(",
+                    image: "https://www.elegantthemes.com/blog/wp-content/uploads/2020/08/000-http-error-codes.png"
+                  }));
+                    
+                }
+                
+                });
+            return;
+          }
       });
   });
 

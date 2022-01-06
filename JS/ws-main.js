@@ -23,8 +23,9 @@ ws.onopen = () => {
       console.log(obj.msg);
     }
 
-    if(obj.info == "movie-data"){
-      openModal(obj.title);
+    if(obj.info == "movie-carddata"){
+      openModal(obj.title, obj.image, obj.desc);
+      console.log(obj);
     }
     
     if(obj.info == "recieved_test"){

@@ -48,6 +48,9 @@
 	 min-height: 540px;
 	 position: relative;
 	 overflow: hidden;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 background-size: cover;
    border-radius: 25px;
 }
  .card .card-card-data {
