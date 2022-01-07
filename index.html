@@ -98,13 +98,12 @@
     <!-- cineplus Originals -->
     <div class="row">
       <h2>CINEPLUS FILMS</h2>
-      <div class="row__posters">
+      <div class="row__posters" id="txtHint">
         <script>
           $.post( "https://api.cine-plus.nl/getMovies.php", function( data ) {
             document.getElementById("txtHint").innerHTML = data;
 });
           </script>
-<div id="txtHint"></div>
 
       </div>
     </div>
