@@ -69,7 +69,8 @@ app.ws('/server', ws => {
                       msg: "Here you go, this is all the information from the database!",
                       desc: result[0].info,
                       title: result[0].title,
-                      image: result[0].image
+                      image: result[0].image,
+                      id: result[0].movie_id
                     }));
                 }
                 if (result.length < 1){
