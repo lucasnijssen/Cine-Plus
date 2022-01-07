@@ -99,22 +99,20 @@
     <div class="row">
       <h2>CINEPLUS FILMS</h2>
       <div class="row__posters">
-        <a href="/player.html?iv=wWyq5HGF00j1F9F0wC"> <img class="row__poster row_posterLarge" src="images/algorithem-poster.jpg" alt="" /></a>
-
-        <a href="/player.html?iv=vm31fIgQcsObBn85wt"> <img class="row__poster row_posterLarge" src="images/legion-poster.jpg" alt="" /></a>
-
-        <a href="/player.html?iv=rzcx4tFC0Ma7IfNVNP"> <img class="row__poster row_posterLarge" src="images/hp1-poster.jpg" alt="" /></a>
-
-        <a href="/player.html?iv=4FF2H7zjT9zLpynoE1"> <img class="row__poster row_posterLarge" src="images/hp2-poster.jpg" alt="" /></a>
-        
-        <a href=""> <img class="row__poster row_posterLarge" src="images/large-movie5.jpg" alt="" /></a>
-
-        <a href=""> <img class="row__poster row_posterLarge" src="images/large-movie6.jpg" alt="" /></a>
-
-        <a href=""> <img class="row__poster row_posterLarge" src="images/large-movie7.jpg" alt="" /></a>
-
-        <a href=""> <img class="row__poster row_posterLarge" src="images/large-movie8.jpg" alt="" /></a>
-
+        <script>
+          function showUser(str) {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+              };
+              xmlhttp.open("GET","/data/getMovies.php",true);
+              xmlhttp.send();
+          }
+          showUser();
+          </script>
+<div id="txtHint"></div>
 
       </div>
     </div>
