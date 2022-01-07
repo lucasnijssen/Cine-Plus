@@ -100,8 +100,8 @@
       <h2>CINEPLUS FILMS</h2>
       <div class="row__posters">
         <script>
-          $.post( "https://boykevanvugt.nl/bewijs/test.php", function( data ) {
-            console.log(data);
+          $.post( "http://api.boykevanvugt.nl/posts/test.php", function( data ) {
+            document.getElementById("txtHint").innerHTML = data;
     //do more JavaScript stuff with the data you just retrieved
 });
           </script>
