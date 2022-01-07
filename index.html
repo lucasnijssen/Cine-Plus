@@ -100,17 +100,10 @@
       <h2>CINEPLUS FILMS</h2>
       <div class="row__posters">
         <script>
-          function showUser(str) {
-              var xmlhttp = new XMLHttpRequest();
-              xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("txtHint").innerHTML = this.responseText;
-                }
-              };
-              xmlhttp.open("GET","https://boykevanvugt.nl/bewijs/test.php",true);
-              xmlhttp.send();
-          }
-          showUser();
+          $.post( "/data/getMovies.php", function( data ) {
+            console.log(data);
+    //do more JavaScript stuff with the data you just retrieved
+});
           </script>
 <div id="txtHint"></div>
 
