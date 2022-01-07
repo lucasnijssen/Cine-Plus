@@ -1,3 +1,6 @@
+<?php
+header('Access-Control-Allow-Origin: *', false);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +8,7 @@
 <body>
 
 <?php
+
 $con = mysqli_connect('db2.dixiehosting.nl','cineplus','xCibCzUgW9bj8BQ4','lucasnijssen_cineplus');
 if (!$con) {
   die('Could not connect: ' . mysqli_error($con));
@@ -15,7 +19,7 @@ $sql="SELECT * FROM movies";
 $result = mysqli_query($con,$sql);
 
 while($row = mysqli_fetch_array($result)) {
-  echo '<a href="/player.html?iv=' . $row['movie_id'] . '"> <img class="row__poster row_posterLarge" src="' . $row['cover'] . '" alt="" /></a>';
+  echo '<a class="triggerModal" onclick="createModal(`' . $row['movie_id'] . '`)" data-mid="' . $row['movie_id'] . '"> <img class="row__poster row_posterLarge" src="' . $row['cover'] . '" alt="" /></a>';
 }
 mysqli_close($con);
 ?>
