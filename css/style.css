@@ -22,7 +22,9 @@ body {
   overflow-x: scroll;
   padding: 20px;
 }
-
+.noHover{
+  pointer-events: none;
+}
 .row__poster:hover {
   transform: scale(1.08);
 }

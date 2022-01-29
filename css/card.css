@@ -17,8 +17,10 @@
 }
  .card-row {
 	 max-width: 1000px;
-	 padding: 5%;
-	 margin: auto;
+	 margin-top: 10%;
+	 margin-left: auto;
+	 margin-right: auto;
+	 margin-bottom: auto;
 }
  .card {
 	 padding: 0;

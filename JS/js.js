@@ -34,6 +34,7 @@ async function setInformation(title, cdn, movie){
       document.getElementById("loading").style.display = "none";
       document.title = "CinePlus - " + title; 
       settime();
+      video.play();
       clearInterval(load);
       return;
     }

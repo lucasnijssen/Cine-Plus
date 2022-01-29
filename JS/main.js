@@ -5,6 +5,9 @@ const closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
   modal.classList.toggle("show-modalOverlay");
+  document.querySelectorAll('[id=test]').forEach(element=> {
+    element.classList.toggle("noHover");
+  });
 }
 
 function createModal(name) {
@@ -21,6 +24,10 @@ function openModal(title, img, desc, movieid) {
   var ur = document.getElementById("modal-url");
   var foto = document.getElementById("modal-img");
   var dis = document.getElementById("modal-disc");
+  
+  document.querySelectorAll('[id=test]').forEach(element=> {
+    element.classList.toggle("noHover");
+  });
   tit.innerHTML = title;
   dis.innerHTML = desc;
   ur.setAttribute("onclick", "window.location.href='/player.html?iv=" + movieid + "';");
