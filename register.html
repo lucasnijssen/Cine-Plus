@@ -10,8 +10,8 @@ include_once("/phplib/login.php");
     </script>
     <body style="overflow: hidden;">
         <div class="login-dark" style="background-image:url(&quot;http://www.abutimes.com/wp-content/uploads/2017/08/red-audi-cineplus.jpg&quot;);">
-            <form method="post" action="./register.html">
-                <h2 class="sr-only">Registratie</h2>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <h2 class="sr-only">Registratie Cine-Plus</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Uw Email"></div>
                 <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
