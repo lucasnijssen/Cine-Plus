@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							$_SESSION["gebruiker"] = "test";
 
 
-                            header("location: home.php");
+                            header("location: index.html");
                         } else{
 
                             $password_err = "The password you entered was not valid.";
