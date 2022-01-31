@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                include_once("./mail.php");
+                include_once("mail.php");
                 header("location: index.html");
             } else{
                 echo "Something went wrong. Please try again later2.";
