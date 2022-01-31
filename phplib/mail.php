@@ -13,7 +13,7 @@ foreach($variables as $key => $value)
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
   require_once "Mail.php";
   $host = "yeetz.ovh";
-  $username = "welcome@registration.cine-plus.nl";
+  $usname = "welcome@registration.cine-plus.nl";
   $password = "zN7VYVLqtaLKm9t";
   $port = "587";
   $to = $username;
@@ -23,7 +23,7 @@ foreach($variables as $key => $value)
   $email_address = "welcome@registration.cine-plus.nl";
 
   $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
-  $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+  $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $usname, 'password' => $password));
   $mail = $smtp->send($to, $headers, $email_body);
 
 
