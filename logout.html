@@ -1,0 +1,12 @@
+<?php
+session_start();
+$_SESSION = array();
+session_destroy();
+header("location: login.html");
+exit;
+?>
+
+<body style="overflow: hidden;">
+    <div class="login-dark" style="background-image:url(&quot;http://www.abutimes.com/wp-content/uploads/2017/08/red-audi-cineplus.jpg&quot;);">
+            <h2 class="sr-only">We loggen je nu uit....</h2>
+</body>
