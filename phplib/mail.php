@@ -3,7 +3,7 @@ $variables = array();
 
 $variables['klant'] = $username;
 
-$template = file_get_contents("welkom.html");
+$template = file_get_contents("./welkom.html");
 
 foreach($variables as $key => $value)
 {
