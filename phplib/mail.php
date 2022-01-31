@@ -14,15 +14,4 @@
   $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
   $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $usname, 'password' => $password));
   $mail = $smtp->send($to, $headers, $email_body);
-
-
-  if (PEAR::isError($mail)) {
-    echo("<p>" . $mail->getMessage() . "</p>");
-    } else {
-      echo '<script language="javascript">';
-      echo 'alert("mail is verzonden naar ' . $username . '")';
-      echo '</script>';
-      echo "<script type='text/javascript'>window.close();</script>";
-    }
-
 ?>
