@@ -1,15 +1,4 @@
 <?php
-$variables = array();
-
-$variables['klant'] = $username;
-
-$template = file_get_contents("./welkom.html");
-
-foreach($variables as $key => $value)
-{
-    $template = str_replace('{{ '.$key.' }}', $value, $template);
-}
-
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
   require_once "Mail.php";
   $host = "yeetz.ovh";
@@ -19,7 +8,7 @@ foreach($variables as $key => $value)
   $to = $username;
   $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
   $email_subject = "Welkom bij Cine-Plus" ;
-  $email_body = $template;
+  $email_body = '<p>Welkom ' . $username . ' bij Cine-Plus<p><br>Je account is successvol aangemaakt!';
   $email_address = "welcome@registration.cine-plus.nl";
 
   $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
