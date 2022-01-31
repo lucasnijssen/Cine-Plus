@@ -12,7 +12,6 @@ foreach($variables as $key => $value)
 
 echo $template;
 
-if(isset($_POST["mailsend"])){
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
   require_once "Mail.php";
   $host = "ssl://yeetz.ovh";
@@ -38,6 +37,5 @@ if(isset($_POST["mailsend"])){
     echo '</script>';
     echo "<script type='text/javascript'>window.close();</script>";
   }
-}
 
 ?>
