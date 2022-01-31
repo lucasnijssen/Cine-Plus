@@ -1,6 +1,3 @@
-<script>
-    console.log("Mailer aangesproken");
-</script>
 <?php
 $variables = array();
 
