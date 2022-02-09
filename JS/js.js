@@ -1,23 +1,6 @@
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("play");
-// loadjson();
-// async function loadjson(movie, cdn, title){
-//     let object;
-//     let httpRequest = new XMLHttpRequest(); // asynchronous request
-//     httpRequest.open("GET", "movies.json", true);
-//     httpRequest.send();
-//     httpRequest.addEventListener("readystatechange", function() {
-//         if (this.readyState === this.DONE) {
-//             // when the request has completed
-//             object = JSON.parse(this.response);
-//             for(var i = 0; i < object.length; i++){
-//                 if(object[i].name == getUrlVars()["iv"]){
-//                     setInformation(object[i].title, object[i].cdn, object[i].name)
-//                 }
-//             }
-//         }
-//     });
-// }
+
 async function setInformation(title, cdn, movie){
 
   video.src = cdn; 
