@@ -1,2 +1,2 @@
 server/.env
-phplib/mailconfig.php
+phplib/mailerconfig.php
