@@ -4,10 +4,10 @@ require_once "config.php";
 $gebruikersid = $_SESSION["id"];
 $code = $_POST['verifycode'];
 echo "<script>console.log('$code')</script>";
-
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 if(isset($_POST['verifycode'])){
-    $sql = "UPDATE `users` SET `verify`='1', `code`=null WHERE id= $gebruikersid AND code= '$code'";
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $sql = "UPDATE `users` SET `verify`='1',`code`=null WHERE id= '$gebruikersid'";
+
     if ($conn->query($sql) === TRUE) {
         echo "Done";
     } else {
