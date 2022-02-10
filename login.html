@@ -15,8 +15,8 @@ include_once("./phplib/login.php");
             <form method="post" action="./login.html">
                 <h2 class="sr-only">Cine-Plus Login</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Gebruikersnaam"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="username" name="username" required placeholder="Gebruikersnaam"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" required placeholder="Password"></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" value="Input Button" onclick=" relocate_home()" type="button">Register</button></div>
               </form>
