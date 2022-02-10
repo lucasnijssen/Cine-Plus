@@ -65,7 +65,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $uniqid = uniqid(300);
+        $rand_start = rand(9,9);
+        $generatedcode = substr($uniqid,$rand_start,16);
+        $code = md5($generatedcode);
+        $sql = "INSERT INTO users (username, password, code) VALUES (?, ?, '$code')";
 
 
         if($stmt = mysqli_prepare($link, $sql)){
