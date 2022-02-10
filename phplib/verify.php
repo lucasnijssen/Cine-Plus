@@ -3,10 +3,10 @@ session_start();
 require_once "config.php";
 $gebruikersid = $_SESSION["id"];
 $code = $_POST['verifycode'];
-echo "<script>console.log('$code')</script>";
+$phsid = $_COOKIE["PHPSESSID"];
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 if(isset($_POST['verifycode'])){
-    $sql = "UPDATE `users` SET `verify`='1',`code`=null WHERE id= '$gebruikersid'";
+    $sql = "UPDATE `users` SET `verify`='1',`code`=null WHERE id= '$gebruikersid' AND code= '$code' AND sesid='$phsid'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Done";
