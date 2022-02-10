@@ -71,9 +71,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);
                             }
-                            $ses = $_SESSION["username"];
-                            $ses_id = $_SESSION["id"];
-                            $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$ses','$ses_id','UNKNOWN','UNKNOWN2')";
+                            $ses_uname = $_SESSION["username"];
+                            $ses_uid = $_SESSION["id"];
+                            $ses_id = $_COOKIE["PHPSESSID"];
+                            $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$ses_uid','$ses_id','UNKNOWN','UNKNOWN2')";
 
                             if ($conn->query($create_session) === TRUE) {
                                 header("location: index.html");
