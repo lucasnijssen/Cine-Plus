@@ -9,6 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 <?php 
+include_once("config.php");
 $gebruikersid = $_SESSION["id"];
 $phsid = $_COOKIE["PHPSESSID"];
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
