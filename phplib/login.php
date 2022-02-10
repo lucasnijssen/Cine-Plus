@@ -47,15 +47,6 @@ $username_err = $password_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if(!issset($_POST["username"])){
-        echo '<script>swal.fire("Gebruikersnaam", "Je hebt geen gebruikersnaam opgegeven", "error");</script>';
-        die();
-    }
-    if(!issset($_POST["password"])){
-        echo '<script>swal.fire("Wachtwoord", "Je hebt geen wachtwoord opgegeven", "error");</script>';
-        die();
-    }
-
 
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
