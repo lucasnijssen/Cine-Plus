@@ -20,4 +20,12 @@ if ($result->num_rows > 0) {
 
 }
 $conn->close();
+
+if($verstat == 0){
+
+}else{
+    header("location: verify.html");
+}
+
+
 ?>
