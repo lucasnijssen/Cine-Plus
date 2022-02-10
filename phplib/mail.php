@@ -1,7 +1,7 @@
 <?php
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
   require_once "Mail.php";
-  require_once "./mailerconfig.php";
+  require_once "mailerconfig.php";
   $to = $username;
   $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
   $email_subject = "Welkom bij Cine-Plus" ;
