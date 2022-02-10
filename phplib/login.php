@@ -108,3 +108,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+<iframe name="frame"></iframe>
