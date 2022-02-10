@@ -76,13 +76,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$ses','$ses_id','UNKNOWN','UNKNOWN2')";
 
                             if ($conn->query($create_session) === TRUE) {
-                                
+                                header("location: index.html");
                             } else {
                                 echo "Error: " . $create_session . "<br>" . $conn->error;
                             }
-
-
-                            header("location: index.html");
                         } else{
 
                             $password_err = "The password you entered was not valid.";
