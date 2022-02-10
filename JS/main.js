@@ -47,7 +47,7 @@ window.addEventListener("click", windowOnClick);
 document.addEventListener('keydown', (event) => {
 		if (event.keyCode == '27'){
       if(modal.classList.contains("show-modalOverlay")){
-        modal.classList.remove("show-modalOverlay");
+        toggleModal();
       }
 		}
   });
