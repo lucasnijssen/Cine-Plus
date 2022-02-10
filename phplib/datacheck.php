@@ -1,31 +1,3 @@
-<?php
-$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$ses_id = $_COOKIE["PHPSESSID"];
-$sql = "select * from users WHERE id = '$gebruikersid' AND sesid = '$ses_id'";
-if ($conn->query($sql) === TRUE) {
-    $datacheck = true;
-} else {
-    $datacheck = false;
-}
-$conn->close();
-    
-}
-
-
-if($datacheck == true){
-
-}else{
-    header("location: logout.html");
-}
-
-?>
-
-
-
 <?php 
 include_once "config.php";
 $gebruikersid = $_SESSION["id"];
