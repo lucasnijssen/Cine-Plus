@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
 
-                    $username_err = "No account found with that username.";
+                    $username_err = '<script>swal.fire("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>';
                     echo '<script>swal.fire("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>';
                 }
             } else{
