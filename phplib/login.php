@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
+        echo '<script>swal("Gebruikersnaam", "Je hebt geen gebruikersnaam opgegeven", "error");</script>'
     } else{
         $username = trim($_POST["username"]);
     }
@@ -29,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
+        echo '<script>swal("Wachtwoord", "Je hebt geen wachtwoord opgegeven", "error");</script>'
     } else{
         $password = trim($_POST["password"]);
     }
@@ -84,14 +86,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         } else{
 
                             $password_err = "The password you entered was not valid.";
+                            echo '<script>swal("Oeps..", "De gebruikersnaam en wachtwoord komen niet overeen", "error");</script>'
                         }
                     }
                 } else{
 
                     $username_err = "No account found with that username.";
+                    echo '<script>swal("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>'
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
+                echo '<script>swal("Er ging iets fout..", "Oei, er ging iets fout aan onze kant, probeer het later nog eens!", "error");</script>'
             }
         }
 
