@@ -3,32 +3,40 @@
  session_set_cookie_params(864000);
 session_start();
 
-$error_mes = $_COOKIE["login_error"];
-echo '<script>console.log("' . $error_mes . '")';
+
+echo '<script>console.log("' . $error_mes . '")</script>';
+echo '<script>console.log("Hier zou de cookie moeten staan")</script>';
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: index.html");
     exit;
 }
 
-if($error_mes == "username"){
-    setcookie("login_error","",-1);
-    echo '<script>swal.fire("Gebruikersnaam", "Je hebt geen gebruikersnaam opgegeven", "error");</script>';
-}else if($error_mes == "password"){
-    setcookie("login_error","",-1);
-    echo '<script>swal.fire("Wachtwoord", "Je hebt geen wachtwoord opgegeven", "error");</script>';
-}else if($error_mes == "invalid"){
-    setcookie("login_error","",-1);
-    echo '<script>swal.fire("Oeps..", "De gebruikersnaam en wachtwoord komen niet overeen", "error");</script>';
-}else if($error_mes == "notfound"){
-    setcookie("login_error","",-1);
-    echo '<script>swal.fire("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>';
-}else if($error_mes == "other"){
-    setcookie("login_error","",-1);
-    echo '<script>swal.fire("Er ging iets fout..", "Oei, er ging iets fout aan onze kant, probeer het later nog eens!", "error");</script>';
-}else{
+if(isset($_COOKIE["login_error"])){
+    $error_mes = $_COOKIE["login_error"];
+    echo '<script>console.log("Script Run")</script>';
+    if($error_mes == "username"){
+        setcookie("login_error","",-1);
+        echo '<script>swal.fire("Gebruikersnaam", "Je hebt geen gebruikersnaam opgegeven", "error");</script>';
+    }else if($error_mes == "password"){
+        setcookie("login_error","",-1);
+        echo '<script>swal.fire("Wachtwoord", "Je hebt geen wachtwoord opgegeven", "error");</script>';
+    }else if($error_mes == "invalid"){
+        setcookie("login_error","",-1);
+        echo '<script>swal.fire("Oeps..", "De gebruikersnaam en wachtwoord komen niet overeen", "error");</script>';
+    }else if($error_mes == "notfound"){
+        setcookie("login_error","",-1);
+        echo '<script>swal.fire("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>';
+    }else if($error_mes == "other"){
+        setcookie("login_error","",-1);
+        echo '<script>swal.fire("Er ging iets fout..", "Oei, er ging iets fout aan onze kant, probeer het later nog eens!", "error");</script>';
+    }else{
+    
+    }    
 
 }
+
+
 
 require_once "config.php";
 
@@ -43,6 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
         setcookie("login_error","username",10);
+        echo "<script>alert('test');</script>";
         
     } else{
         $username = trim($_POST["username"]);
