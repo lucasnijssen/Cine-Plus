@@ -1,5 +1,2 @@
 AddType application/x-httpd-php .html .htm 
-<Directory .git>
-    order allow,deny
-    deny from all
-</Directory>
+RedirectMatch 403 /\.git
