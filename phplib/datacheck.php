@@ -17,7 +17,7 @@ $conn->close();
 
 
 if($datacheck == true){
-    
+
 }else{
     header("location: logout.html");
 }
@@ -54,6 +54,4 @@ if($verstat == 0){
 }else{
     
 }
-
-
 ?>

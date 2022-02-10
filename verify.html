@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="/css/login.css" />
 <?php
 include_once("./phplib/verify.php");
+if($verstat == 1){
+    header("location: index.html");
+}
 ?>
     <body style="overflow: hidden;">
         <div class="login-dark" style="background-image:url(&quot;http://www.abutimes.com/wp-content/uploads/2017/08/red-audi-cineplus.jpg&quot;);">
