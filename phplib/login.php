@@ -71,9 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);
                             }
-                            $ses_uname = $_SESSION["username"];
                             $ses_uid = $_SESSION["id"];
-                            $ses_id = $_COOKIE["PHPSESSID"];
                             $create_session = "UPDATE `users` SET `sesid`='$ses_id' WHERE id= $ses_uid";
 
                             if ($conn->query($create_session) === TRUE) {
