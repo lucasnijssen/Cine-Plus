@@ -4,6 +4,7 @@
 session_start();
 
 $error_mes = $_COOKIE["login_error"];
+echo '<script>console.log("' . $error_mes . '")';
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: index.html");
@@ -26,7 +27,7 @@ if($error_mes == "username"){
     setcookie("login_error","",-1);
     echo '<script>swal.fire("Er ging iets fout..", "Oei, er ging iets fout aan onze kant, probeer het later nog eens!", "error");</script>';
 }else{
-    
+
 }
 
 require_once "config.php";
