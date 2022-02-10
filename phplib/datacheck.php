@@ -1,5 +1,5 @@
 <?php 
-include_once "./config.php";
+include_once "config.php";
 $gebruikersid = $_SESSION["id"];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
