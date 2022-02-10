@@ -17,7 +17,8 @@ include_once("./phplib/login.php");
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 <div class="form-group"><input class="form-control" type="email" name="username" required placeholder="Gebruikersnaam" <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                   <span class="invalid-feedback"><?php echo $username_err; ?></span></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" required placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" required placeholder="Password" <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                  <span class="invalid-feedback"><?php echo $password_err; ?></span></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" value="Input Button" onclick=" relocate_home()" type="button">Register</button></div>
               </form>
