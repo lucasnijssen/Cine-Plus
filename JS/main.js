@@ -33,7 +33,6 @@ function openModal(title, img, desc, movieid) {
   ur.setAttribute("onclick", "window.location.href='/player.html?iv=" + movieid + "';");
   foto.setAttribute("style", "background-image: linear-gradient(180deg, transparent, rgb(0 0 0 / 70%), rgb(0 0 0)), url(" + img + ")")
     modal.classList.toggle("show-modalOverlay");
-    console.log(title);
 }
 
 function windowOnClick(event) {

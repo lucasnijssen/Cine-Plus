@@ -25,7 +25,6 @@ ws.onopen = () => {
 
     if(obj.info == "movie-carddata"){
       openModal(obj.title, obj.image, obj.desc, obj.id);
-      console.log(obj);
     }
     
     if(obj.info == "recieved_test"){
