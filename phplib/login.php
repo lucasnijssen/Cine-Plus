@@ -13,22 +13,22 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 if(isset($_COOKIE["login_error"])){
-    $error_mes = $_SESSION["login_error"];
+    $error_mes = $_COOKIE["login_error"];
     echo '<script>console.log("Script Run")</script>';
     if($error_mes == "username"){
-        $_SESSION["login_error"] = "";
+        setcookie("login_error","",-1);
         echo '<script>swal.fire("Gebruikersnaam", "Je hebt geen gebruikersnaam opgegeven", "error");</script>';
     }else if($error_mes == "password"){
-        $_SESSION["login_error"] = "";
+        setcookie("login_error","",-1);
         echo '<script>swal.fire("Wachtwoord", "Je hebt geen wachtwoord opgegeven", "error");</script>';
     }else if($error_mes == "invalid"){
-        $_SESSION["login_error"] = "";
+        setcookie("login_error","",-1);
         echo '<script>swal.fire("Oeps..", "De gebruikersnaam en wachtwoord komen niet overeen", "error");</script>';
     }else if($error_mes == "notfound"){
-        $_SESSION["login_error"] = "";
+        setcookie("login_error","",-1);
         echo '<script>swal.fire("Oeps..", "Er is geen account gevonden met die gebruikersnaam", "error");</script>';
     }else if($error_mes == "other"){
-        $_SESSION["login_error"] = "";
+        setcookie("login_error","",-1);
         echo '<script>swal.fire("Er ging iets fout..", "Oei, er ging iets fout aan onze kant, probeer het later nog eens!", "error");</script>';
     }else{
     
@@ -49,7 +49,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     if(empty(trim($_POST["username"]))){
-        $_SESSION["login_error"] = "username";
         $username_err = "Please enter username.";
         setcookie("login_error","username",10);
         echo "<script>alert('test');</script>";
@@ -60,7 +59,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     if(empty(trim($_POST["password"]))){
-        $_SESSION["login_error"] = "password";
         $password_err = "Please enter your password.";
         setcookie("login_error","password",10);
     } else{
@@ -116,18 +114,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 echo "Error: " . $create_session . "<br>" . $conn->error;
                             }
                         } else{
-                            $_SESSION["login_error"] = "invalid";
+
                             $password_err = "The password you entered was not valid.";
                             setcookie("login_error","invalid",10);
                         }
                     }
                 } else{
-                    $_SESSION["login_error"] = "notfound";
+
                     $username_err = "No account found with that username.";
                     setcookie("login_error","notfound",10);
                 }
             } else{
-                $_SESSION["login_error"] = "other";
                 echo "Oops! Something went wrong. Please try again later.";
                 setcookie("login_error","other",10);
             }
