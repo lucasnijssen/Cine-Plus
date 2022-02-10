@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "config.php";
 $gebruikersid = $_SESSION["id"];
 $code = $_POST['verifycode'];
