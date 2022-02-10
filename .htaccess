@@ -1,4 +1,2 @@
 AddType application/x-httpd-php .html .htm 
 RedirectMatch 403 /\.git
-RedirectMatch 403 /phplib
-RedirectMatch 403 /JS
