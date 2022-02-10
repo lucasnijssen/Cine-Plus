@@ -5,7 +5,7 @@
   $to = $username;
   $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
   $email_subject = "Welkom bij Cine-Plus" ;
-  $email_body = '<p>Welkom ' . $username . ' bij Cine-Plus<p><br>Je account is successvol aangemaakt!';
+  $email_body = '<p>Welkom ' . $username . ' bij Cine-Plus<p><br>Je account is successvol aangemaakt!<br>U kunt uw account activeren met de code: <b>' . $code . '</b><br><br>Met vriendelijke groet,<br>Cine-Plus';
   $email_address = "welcome@registration.cine-plus.nl";
 
   $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
