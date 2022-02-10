@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/css/login.css" />
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 <?php
 include_once("./phplib/login.php");
 ?>
@@ -23,3 +25,17 @@ include_once("./phplib/login.php");
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="/JS/ws-main.js?v=3"></script>
     </body>
+<script>
+  Swal.fire({
+    title: "Account reset",
+    text: "Alle accounts zijn verwijderd i.v.m. een update in de database",
+    position: "center",
+    background: "white",
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    allowEnterKey: false,
+    showConfirmButton: false,
+    showCancelButton: false,
+    timer: 5000
+  });
+</script>
