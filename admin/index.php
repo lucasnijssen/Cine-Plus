@@ -27,6 +27,6 @@ $conn->close();
 if($usr_rank >= 10){
     echo "Je bent een admin :)";
 }else{
-    echo "Je bent geen admin, wat doe je hier? :("
+    echo "Je bent geen admin, wat doe je hier? :(";
 }
 ?>
