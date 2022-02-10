@@ -2,7 +2,17 @@
 require_once "config.php";
 $gebruikersid = $_SESSION["id"];
 $code = $_POST['verifycode'];
-echo "<script>console.log('$code')";
+echo "<script>console.log('$code')</script>";
+
+if(isset($_POST['verifycode'])){
+    $sql = "UPDATE `users` SET `verify`='1', `code`=null WHERE id= $gebruikersid AND code= '$code'";
+
+    if ($conn->query($sql) === TRUE) {
+        header("location: index.html");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
 
 ?>
 
@@ -34,3 +44,4 @@ if($verstat == 1){
 }else{
     
 }
+?>
