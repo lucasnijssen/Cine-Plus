@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $ses_uname = $_SESSION["username"];
                             $ses_uid = $_SESSION["id"];
                             $ses_id = $_COOKIE["PHPSESSID"];
-                            $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$ses_uid','$ses_id','UNKNOWN','UNKNOWN2')";
+                            $create_session = "UPDATE `users` SET `sesid`='$ses_id' WHERE id= $ses_uid";
 
                             if ($conn->query($create_session) === TRUE) {
                                 header("location: index.html");
