@@ -66,8 +66,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 							$_SESSION["gebruiker"] = "test";
-                            $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$_SESSION["username"]','$_SESSION["id"]','UNKNOWN','UNKNOWN2')";
-                            mysqli_stmt_execute($create_session);
+
+                            $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
+                            $create_session = 'INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ($_SESSION["username"],$_SESSION["id"],UNKNOWN,UNKNOWN2)';
+
+                            if ($conn->query($create_session) === TRUE) {
+                                echo '<meta http-equiv="refresh" content="0; url=#" />';
+                            } else {
+                                echo "Error: " . $create_session . "<br>" . $conn->error;
+                            }
 
 
                             header("location: index.html");
