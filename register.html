@@ -13,9 +13,9 @@ include_once("./phplib/register.php");
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <h2 class="sr-only">Registratie Cine-Plus</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                <div class="form-group"><input class="form-control" type="email" name="username" placeholder="Uw Email"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                <div class="form-group"><input class="form-control" type="password" name="confirm_password" placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="email" name="username" required placeholder="Uw Email"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" required placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="confirm_password" required placeholder="Password"></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Registreer</button></div>
               </form>
         <script src="assets/js/jquery.min.js"></script>
