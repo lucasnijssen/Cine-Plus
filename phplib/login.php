@@ -2,6 +2,7 @@
  ini_set('session.gc_maxlifetime', 864000);
  session_set_cookie_params(864000);
 session_start();
+ob_start();
 setcookie('login_error', '', time() + (86400 * 30), "/"); // 86400 = 1 day
 
 
