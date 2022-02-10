@@ -37,6 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err)){
 
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        
 
         if($stmt = mysqli_prepare($link, $sql)){
 
@@ -65,6 +66,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 							$_SESSION["gebruiker"] = "test";
+                            $create_session = "INSERT INTO `sessions` (`userid`, `sessionid`, `ip`, `device`) VALUES ('$_SESSION["username"]','$_SESSION["id"]','UNKNOWN','UNKNOWN2')";
+                            mysqli_stmt_execute($create_session);
 
 
                             header("location: index.html");

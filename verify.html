@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/login.css" />
+<?php
+include_once("./phplib/verify.php");
+?>
+    <body style="overflow: hidden;">
+        <div class="login-dark" style="background-image:url(&quot;http://www.abutimes.com/wp-content/uploads/2017/08/red-audi-cineplus.jpg&quot;);">
+            <form method="post" action="./login.html">
+                <h2 class="sr-only">Cine-Plus Verificatie</h2>
+                <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                <div class="form-group"><input class="form-control" type="text" name="verifycode" placeholder="Verificatie Code"></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" value="Input Button" onclick=" relocate_home()" type="button">Register</button></div>
+              </form>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </body>
