@@ -73,7 +73,18 @@
                         echo '</div>';
                         echo '<div class="fw-bold">';
                         echo '<div class="text-truncate"><span>' . $row["message_short"] . '</span></div>';
-                        echo '<p class="small text-gray-500 mb-0">Van: ' . $row["user"] . '</p>';
+
+                        $senderid = $row["user"];
+                        if($senderid == "s"){
+                            $sendername = "Systeem";
+                        }else{
+                            $sql3 = "select * from users WHERE id='$senderid'";
+                            $result3 = $conn->query($sql3);
+                            $row = mysql_fetch_row($result3);
+                            $sendername = $row[1];
+                        }
+
+                        echo '<p class="small text-gray-500 mb-0">Van: ' . $sendername . '</p>';
                         echo '</div></a>';
                         }
                     } else {
