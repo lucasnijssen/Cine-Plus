@@ -5,8 +5,8 @@ $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "select * from movies";
+$zoek = $_POST["zoek"];
+$sql = "SELECT * FROM `movies` WHERE `title` LIKE '%$zoek%";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
