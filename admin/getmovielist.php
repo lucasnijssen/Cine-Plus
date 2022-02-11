@@ -13,9 +13,8 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo '<td><img class="rounded-circle me-2" width="30" height="30" src="' . $row["image"] . '">' . $row["movie_id"] . '</td>';
+        echo '<td><a href="https://cine-plus.nl/player.html?iv=' . $row["movie_id"] .'" target="_blank"> ' . $row["movie_id"] . '</a></td>';
         echo '<td>' . $row["title"] . '</td>';
-        echo '<td>' . $row["image"] . '</td>';
         echo '<td>' . $row["info"] . '</td>';
         echo '<td>' . $row["cdn"] . '</td>';
         echo '<td>Actie komt hier</td>';
