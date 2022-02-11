@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["title"] . '</td>';
         echo '<td>' . $row["info"] . '</td>';
         echo '<td>' . $row["cdn"] . '</td>';
-        echo '<td>Actie komt hier</td>';
+        echo "<td><a href='./show.php?id=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a></td>";
         echo '</tr>';
     }
 } else {
