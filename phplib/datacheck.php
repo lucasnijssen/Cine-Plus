@@ -15,11 +15,16 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $verstat = $row["verify"];
+        $level = $row["ranglevel"];
     }
 } else {
 
 }
 $conn->close();
+
+if($level < 4){
+    header("location: banned.html");
+}
 
 if($verstat == 0){
     header("location: verify.html");
