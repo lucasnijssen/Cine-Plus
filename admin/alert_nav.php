@@ -38,7 +38,8 @@
                         echo '<div class="me-3">';
                         echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
                         echo '</div>';
-                        echo '<div><span class="small text-gray-500">December 12, 2019</span>';
+                        $date = date('F j Y', strtotime($row["datum"]));
+                        echo '<div><span class="small text-gray-500">' . $date . '</span>';
                         echo '<p>'. $row["short"] . '</p>';
                         echo '</div></a>';
                         }
