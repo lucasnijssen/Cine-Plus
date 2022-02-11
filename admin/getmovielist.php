@@ -37,7 +37,7 @@ $conn->close();
 <?php
 if (isset($_GET["delmov"])) {
 $deleteprod_id = $_GET["delmov"];
-
+include_once("../phplib/config.php");
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
