@@ -1,10 +1,33 @@
 <!DOCTYPE html>
+
+<?php 
+include_once("../phplib/config.php");
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$mid = $_GET["id"];
+$sql = "select * from movies WHERE id = $mid";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $mov_title = $row["title"];
+    }
+} else {
+
+}
+$conn->close();
+?>
+
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Cine-Plus Admin</title>
+    <title><?php echo $mov_title; ?> - Cine-Plus Admin</title>
     <meta name="description" content="Administratie pagina van Cine-Plus">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -56,7 +79,7 @@
                     <h3 class="text-dark mb-4">Team</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Films</p>
+                            <p class="text-primary m-0 fw-bold"><?php $mov_title; ?></p>
                         </div>
                         <div class="card-body">
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
