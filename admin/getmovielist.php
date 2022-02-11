@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["info"] . '</td>';
         echo '<td>' . $row["cdn"] . '</td>';
         echo "<td><a href='./show.php?id=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a>";
-        echo "<a href='?delmov=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a></td>";
+        echo "<a href='?delmov=" . $row["id"]. "' class='btn btn-danger' role='button' style='margin: inherit;'>Delete</a></td>";
         echo '</tr>';
     }
 } else {
@@ -37,9 +37,8 @@ $conn->close();
 <?php
 if (isset($_GET["delmov"])) {
 $deleteprod_id = $_GET["delmov"];
-include_once("../phplib/config.php");
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
