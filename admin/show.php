@@ -76,7 +76,7 @@ $conn->close();
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4"><?php $mov_title; ?></h3>
+                    <h3 class="text-dark mb-4"><?php echo $mov_title; ?></h3>
                     <div class="card shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                             <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
