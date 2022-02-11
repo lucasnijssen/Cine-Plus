@@ -6,7 +6,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "select * from movies";
+    $sql = "select * from admin_alerts";
     $sql2 = "select * from admin_messages WHERE getter='$gebruikersid'";
 
     $result = $conn->query($sql);
@@ -39,7 +39,7 @@
                         echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
                         echo '</div>';
                         echo '<div><span class="small text-gray-500">December 12, 2019</span>';
-                        echo '<p>A new monthly report is ready to download!</p>';
+                        echo '<p>'. $row["short"] . '</p>';
                         echo '</div></a>';
                         }
                     } else {
