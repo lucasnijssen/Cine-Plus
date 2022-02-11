@@ -20,7 +20,14 @@
 
 
 <li class="nav-item dropdown no-arrow mx-1">
-    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter"><?php echo $alert_count; ?></span><i class="fas fa-bell fa-fw"></i></a>
+    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+        <?php 
+        if($alert_count > 0){
+            echo '<span class="badge bg-danger badge-counter">';
+            echo $alert_count; 
+            echo '</span>';
+        }
+        ?><i class="fas fa-bell fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
             <h6 class="dropdown-header">alerts center</h6>
                 <?php 
