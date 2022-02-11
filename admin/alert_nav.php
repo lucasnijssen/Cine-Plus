@@ -72,8 +72,8 @@
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
                         echo '</div>';
                         echo '<div class="fw-bold">';
-                        echo '<div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem Ive been having.</span></div>';
-                        echo '<p class="small text-gray-500 mb-0">Emily Fowler</p>';
+                        echo '<div class="text-truncate"><span>' . $row["message_short"] . '</span></div>';
+                        echo '<p class="small text-gray-500 mb-0">Van: ' . $row["user"] . '</p>';
                         echo '</div></a>';
                         }
                     } else {
