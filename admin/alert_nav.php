@@ -34,7 +34,7 @@
                     if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="#">';
+                        echo '<a class="dropdown-item d-flex align-items-center" onclick="swal.fire("TiTEL", "Tekst");">';
                         echo '<div class="me-3">';
                         echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
                         echo '</div>';
@@ -68,7 +68,7 @@
                     if ($result2->num_rows > 0) {
                     // output data of each row
                     while($row = $result2->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="#">';
+                        echo '<a class="dropdown-item d-flex align-items-center" onclick="swal.fire("TiTEL", "Tekst");">';
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
                         echo '</div>';
                         echo '<div class="fw-bold">';
