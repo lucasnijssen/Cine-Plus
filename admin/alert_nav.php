@@ -68,20 +68,28 @@
                     if ($result2->num_rows > 0) {
                     // output data of each row
                     while($row = $result2->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`TiTEL`, `Tekst`);">';
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["message_short"] . '`, `' . $row["message"] . '`);">';
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
                         echo '</div>';
                         echo '<div class="fw-bold">';
                         echo '<div class="text-truncate"><span>' . $row["message_short"] . '</span></div>';
 
                         $senderid = $row["user"];
+                        $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
                         if($senderid == "s"){
                             $sendername = "Systeem";
+                            $conn->close();
                         }else{
-                            $sql3 = "select * from users WHERE id='$senderid'";
+                            $sql3 = "select * from users WHERE id=$senderid";
                             $result3 = $conn->query($sql3);
-                            $row = mysql_fetch_row($result3);
-                            $sendername = $row[1];
+                            if ($result3->num_rows > 0) {
+                                while($row = $result3->fetch_assoc()) {
+                                    $sendername = $row["username"];
+                                    }
+                                } else {
+                                    $sendername = "Onbekend";
+                                }
+                                $conn->close();
                         }
 
                         echo '<p class="small text-gray-500 mb-0">Van: ' . $sendername . '</p>';
