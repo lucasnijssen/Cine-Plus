@@ -2,7 +2,10 @@
 session_start();
 $gebruikersid = $_SESSION["id"];
 include_once("../phplib/config.php");
-
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.html");
+    exit;
+}
 ?>
 
 <?php 
@@ -29,4 +32,5 @@ if($usr_rank >= 10){
     
 }else{
     header("location: index.html");
+}
 ?>
