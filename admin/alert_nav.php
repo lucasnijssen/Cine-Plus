@@ -16,7 +16,7 @@
     $message_count = $result2->num_rows;
 ?>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <li class="nav-item dropdown no-arrow mx-1">
@@ -34,7 +34,7 @@
                     if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo `<a class="dropdown-item d-flex align-items-center" href="javascript:swal.fire('TiTEL', 'Tekst');">`;
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:swal.fire("TiTEL", "Tekst");">';
                         echo '<div class="me-3">';
                         echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
                         echo '</div>';
