@@ -55,9 +55,9 @@
 <li class="nav-item dropdown no-arrow mx-1">
     <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
     <?php 
-        if($alert_count > 0){
+        if($message_count > 0){
             echo '<span class="badge bg-danger badge-counter">';
-            echo $alert_count; 
+            echo $message_count; 
             echo '</span>';
         }
         ?></span><i class="fas fa-envelope fa-fw"></i></a>
