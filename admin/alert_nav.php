@@ -16,7 +16,7 @@
     $message_count = $result2->num_rows;
 ?>
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 <li class="nav-item dropdown no-arrow mx-1">
