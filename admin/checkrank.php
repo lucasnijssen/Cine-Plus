@@ -32,6 +32,6 @@ $conn->close();
 if($usr_rank >= 10){
     
 }else{
-    header("location: index.html");
+    header("location: /index.html");
 }
 ?>
