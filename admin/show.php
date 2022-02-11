@@ -76,10 +76,16 @@ $conn->close();
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Team</h3>
+                    <h3 class="text-dark mb-4"><?php $mov_title; ?></h3>
                     <div class="card shadow">
-                        <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold"><?php $mov_title; ?></p>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
+                            <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                    <p class="text-center dropdown-header">Administratie:</p>
+                                    <a class="dropdown-item" href="#">&nbsp;Voeg toe</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
