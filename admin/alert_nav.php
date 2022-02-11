@@ -63,7 +63,6 @@
         ?></span><i class="fas fa-envelope fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
             <h6 class="dropdown-header">alerts center</h6>
-            <a class="dropdown-item d-flex align-items-center" href="#">
                 <?php 
                     if ($result2->num_rows > 0) {
                     // output data of each row
