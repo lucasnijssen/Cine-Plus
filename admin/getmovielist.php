@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["info"] . '</td>';
         echo '<td>' . $row["cdn"] . '</td>';
         echo "<td><a href='./show.php?id=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a>";
-        echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-product-id='" . $row["id"]. "' data-target='#verwijderProduct' style='margin: inherit;'>Verwijder</button></td>"
+        echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-product-id='" . $row["id"]. "' data-target='#verwijderProduct' style='margin: inherit;'>Verwijder</button></td>";
         echo '</tr>';
     }
 } else {
