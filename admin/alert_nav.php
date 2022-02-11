@@ -7,7 +7,7 @@
     }
 
     $sql = "select * from movies";
-    $sql2 = "select * from movies";
+    $sql2 = "select * from admin_messages WHERE getter='$gebruikersid'";
 
     $result = $conn->query($sql);
     $result2 = $conn->query($sql2);
