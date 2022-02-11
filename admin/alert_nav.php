@@ -34,7 +34,7 @@
                     if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["message_short"] . '`, `' . $row["text"] . '`);">';
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["short"] . '`, `' . $row["text"] . '`);">';
                         echo '<div class="me-3">';
                         echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
                         echo '</div>';
