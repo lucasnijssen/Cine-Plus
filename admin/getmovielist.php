@@ -6,15 +6,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST["zoek"])){
+if(isset($_POST["zoek"]) || !empty($_POST["zoek"])){
     $zoek = $_POST["zoek"];
-    $sql = "SELECT * FROM `movies` WHERE `title` LIKE '%$zoek%";
+    $sql = "SELECT * FROM `movies` WHERE `title` LIKE '%" . $zoek . "%'";
 }else{
     $sql = "SELECT * FROM `movies`";
 }
 
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
