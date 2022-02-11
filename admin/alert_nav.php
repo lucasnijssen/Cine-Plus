@@ -1,19 +1,25 @@
+<?php
+    include_once("../phplib/config.php");
+    $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "select * from movies";
+    $result = $conn->query($sql);
+    $alert_count = $result->num_rows;
+?>
+
+
 
 
 <li class="nav-item dropdown no-arrow mx-1">
-    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
+    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter"><?php echo $alert_count; ?></span><i class="fas fa-bell fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
             <h6 class="dropdown-header">alerts center</h6>
                 <?php 
-                    include_once("../phplib/config.php");
-                    $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                    }
-
-                    $sql = "select * from movies";
-                    $result = $conn->query($sql);
+               
 
                     if ($result->num_rows > 0) {
                     // output data of each row
