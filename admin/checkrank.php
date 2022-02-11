@@ -22,6 +22,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $usr_rank = $row["ranglevel"];
+        $usr_name = $row["username"];
     }
 } else {
     $usr_rank = 0;
