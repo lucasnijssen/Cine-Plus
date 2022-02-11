@@ -60,7 +60,7 @@
                         echo '</div>';
                         echo '<div class="fw-bold">>';
                         echo '<div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem Ive been having.</span></div>';
-                        echo '<p class="small text-gray-500 mb-0">Emily Fowler</p>'
+                        echo '<p class="small text-gray-500 mb-0">Emily Fowler</p>';
                         echo '</div></a>';
                         }
                     } else {
