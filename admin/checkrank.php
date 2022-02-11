@@ -3,7 +3,7 @@ session_start();
 $gebruikersid = $_SESSION["id"];
 include_once("../phplib/config.php");
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: index.html");
+    header("location: /index.html");
     exit;
 }
 ?>
