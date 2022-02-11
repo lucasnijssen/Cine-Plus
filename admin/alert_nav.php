@@ -56,9 +56,8 @@
                     while($row = $result2->fetch_assoc()) {
                         echo '<a class="dropdown-item d-flex align-items-center" href="#">';
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
-                        echo '<div class="bg-success status-indicator"></div>';
                         echo '</div>';
-                        echo '<div class="fw-bold">>';
+                        echo '<div class="fw-bold">';
                         echo '<div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem Ive been having.</span></div>';
                         echo '<p class="small text-gray-500 mb-0">Emily Fowler</p>';
                         echo '</div></a>';
