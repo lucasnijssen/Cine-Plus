@@ -2,6 +2,10 @@
 session_start();
 $gebruikersid = $_SESSION["id"];
 include_once("../phplib/config.php");
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.html");
+    exit;
+}
 ?>
 
 <?php 
@@ -25,8 +29,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 if($usr_rank >= 10){
-    echo "Je bent een admin :)";
+    
 }else{
-    echo "Je bent geen admin, wat doe je hier? :(";
-}
+    header("location: index.html");
 ?>
