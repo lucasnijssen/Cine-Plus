@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
             $status = "<td style='color:orange;'>Wachten op activatie</td>";
         }
         $date = date('m-d-Y H:i', strtotime($row["created_at"]));
-        echo '<td>' . $status . '</td>';
+        echo $status;
         echo '<td>' . $urang . '</td>';
         echo '<td>' . $date . '</td>';
         echo '</tr>';
