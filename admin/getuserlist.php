@@ -34,6 +34,8 @@ if ($result->num_rows > 0) {
             $urang_name = "Gebruiker";
         }else if($urang == 10){
             $urang_name = "Admin";
+        }else if($urang == 15){
+            $urang_name = "Super Admin";
         }else if($urang < 4){
             $urang_name = "Banned";
         }else{

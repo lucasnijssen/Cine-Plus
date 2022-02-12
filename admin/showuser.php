@@ -28,6 +28,8 @@ if ($result->num_rows > 0) {
             $usr_rang_name = "Gebruiker";
         }else if($usr_rang == 10){
             $usr_rang_name = "Admin";
+        }else if($usr_rang == 15){
+            $usr_rang_name = "Super Admin";
         }else if($usr_rang < 4){
             $usr_rang_name = "Banned";
         }else{
@@ -106,6 +108,7 @@ $conn->close();
                                         <option value="2">Banned</option>
                                         <option value="4">Gebruiker</option>
                                         <option value="10">Admin</option>
+                                        <option value="15">Super Admin</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">
