@@ -109,7 +109,7 @@ $conn->close();
                                     </select>
                                 </div><br>
                                 <div class="form-group">
-                                    <label>Titel</label>
+                                    <label>Verificatie voltooid?</label>
                                     <select class="form-control" name="verify">
                                         <option value="<?php echo $usr_verify; ?>"><?php echo $usr_verify_name; ?></option>
                                         <option value="0">Nee</option>
