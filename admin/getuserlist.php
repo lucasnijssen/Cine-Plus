@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 
         $date = date('m-d-Y H:i', strtotime($row["created_at"]));
         echo $status;
-        echo '<td>' . $urang . '</td>';
+        echo '<td>' . $urang_name . '</td>';
         echo '<td>' . $date . '</td>';
         echo "<td><a href='./showuser.php?id=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a></td>";
         echo '</tr>';
