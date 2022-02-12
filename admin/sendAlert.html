@@ -57,14 +57,14 @@ include_once("../phplib/config.php");
                             <h6 class="text-primary fw-bold m-0">Berichtopmaak</h6>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="post">
+                            <form onsubmit="sendInfo()">
                                 <div class="form-group">
                                     <label>Bericht Titel</label>
-                                    <input type="text" class="form-control" required name="titel" maxlength="32" placeholder="Zet hier een korte titel neer">
+                                    <input type="text" class="form-control" required id="titel" maxlength="32" placeholder="Zet hier een korte titel neer">
                                 </div><br>
                                 <div class="form-group">
                                     <label>Bericht</label>
-                                    <input type="text" class="form-control" required name="bericht" placeholder="Type hier een bericht">
+                                    <input type="text" class="form-control" required id="bericht" placeholder="Type hier een bericht">
                                 </div><br>
                                 <br><button type="submit" class="btn btn-primary">Verstuur</button>
                             </form>
@@ -86,21 +86,13 @@ include_once("../phplib/config.php");
 
 </html>
 
-
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-$new_title = $_POST["titel"];
-$new_bericht = $_POST["bericht"];
-
-if(empty($new_bericht) || empty($new_title)){
-    echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
-    die();
-}else{
-    echo '<script> function sendAlertOut() { ws.send(JSON.stringify({ id: "Test", msg: "I want to test the connection!" })); } sendAlertOut()</script>';
-    
-}
-
-}
-?>
+<script>
+        function sendInfo(){
+        let title = document.getElementById("titel").value;
+        let bericht = document.getElementById("bericht").value;
+        ws.send(JSON.stringify({ id: "send-admin-alert", titel: title, text: bericht }));
+        Swal.fire({ icon: 'success', title: 'Alert Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })
+    }
+</script>
 
 
