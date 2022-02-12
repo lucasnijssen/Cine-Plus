@@ -67,7 +67,7 @@ include_once("../phplib/config.php");
                                 </div><br>
                                 <div class="form-group">
                                     <label>Bericht Titel</label>
-                                    <input type="text" class="form-control" required name="titel" maxlength="40" placeholder="Zet hier een korte titel neer">
+                                    <input type="text" class="form-control" required name="titel" maxlength="32" placeholder="Zet hier een korte titel neer">
                                 </div><br>
                                 <div class="form-group">
                                     <label>Bericht</label>
