@@ -79,7 +79,6 @@ $conn->close();
                             <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
                         </div>
                         <div class="card-body">
-                            <p>Ja heel mooi, alles staat er, niks werkt kwa opslaan. Mooi dat was m, fijn weekend!</p>
                             <form action="#" method="post">
                                 <div class="form-group">
                                     <label>Titel</label>
@@ -147,7 +146,7 @@ if ($conn->connect_error) {
 $sql = "UPDATE `movies` SET `cover`='$mov_new_cover',`cdn`='$mov_new_cdn',`title`='$mov_new_title',`image`='$mov_new_background',`info`='$mov_new_info' WHERE id=$mid";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
-	echo '<meta http-equiv="refresh" content="0; url=#" />';
+	echo "<script>Swal.fire({ icon: 'success', title: 'Informatie Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { window.location = window.location.href; })</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

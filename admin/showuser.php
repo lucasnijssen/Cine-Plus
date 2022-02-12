@@ -88,13 +88,12 @@ $conn->close();
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4"><?php echo $mov_title; ?></h3>
+                    <h3 class="text-dark mb-4"><?php echo $usr_username; ?></h3>
                     <div class="card shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                            <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
+                            <h6 class="text-primary fw-bold m-0">Gebruikersinformatie</h6>
                         </div>
                         <div class="card-body">
-                            <p>Ja heel mooi, alles staat er, niks werkt kwa opslaan. Mooi dat was m, fijn weekend!</p>
                             <form action="#" method="post">
                                 <div class="form-group">
                                     <label>Gebruikersnaam</label>
