@@ -78,29 +78,29 @@ $conn->close();
                             <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
                         </div>
                         <div class="card-body">
-                            <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
-                            <form action="post">
+                            <p>Ja heel mooi, alles staat er, niks werkt kwa opslaan. Mooi dat was m, fijn weekend!</p>
+                            <form action="#" method="post">
                                 <div class="form-group">
-                                    <label for="cdn">Titel</label>
-                                    <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
+                                    <label>Titel</label>
+                                    <input type="text" class="form-control" name="title" value="<?php echo $mov_title; ?>">
                                 </div><br>
                                 <div class="form-group">
-                                    <label for="cdn">INFO</label>
-                                    <input type="url" class="form-control" id="info" name="info" value="<?php echo $mov_info; ?>">
+                                    <label>INFO</label>
+                                    <input type="url" class="form-control" name="info" value="<?php echo $mov_info; ?>">
                                 </div><br>
                                 <div class="form-group">
-                                    <label for="cdn">CDN</label>
-                                    <input type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
+                                    <label>CDN</label>
+                                    <input type="url" class="form-control" name="cdn" value="<?php echo $mov_cdn; ?>">
                                 </div><br>
                                 <div class="form-group">
-                                    <label for="cover">Cover Image (Small)</label>
-                                    <input type="url" class="form-control" id="cover" name="cover" value="<?php echo $mov_cover; ?>">
-                                    <small id="cover" class="form-text text-muted"><img style="max-width: 10%;" src=<?php echo $mov_cover; ?>></small>
+                                    <label>Cover Image (Small)</label>
+                                    <input type="url" class="form-control" name="cover" value="<?php echo $mov_cover; ?>">
+                                    <small class="form-text text-muted"><img style="max-width: 10%;" src=<?php echo $mov_cover; ?>></small>
                                 </div><br>
                                 <div class="form-group">
-                                    <label for="background">Popup Background</label>
-                                    <input type="url" class="form-control" id="background" name="background" value="<?php echo $mov_background; ?>">
-                                    <small id="background" class="form-text text-muted"><img style="max-width: 20%;" src=<?php echo $mov_background; ?>></small>
+                                    <label>Popup Background</label>
+                                    <input type="url" class="form-control" name="background" value="<?php echo $mov_background; ?>">
+                                    <small class="form-text text-muted"><img style="max-width: 20%;" src=<?php echo $mov_background; ?>></small>
                                 </div>
                                 <br><button type="submit" class="btn btn-primary">Opslaan</button>
                             </form>
@@ -121,3 +121,32 @@ $conn->close();
 </body>
 
 </html>
+
+
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+$mov_new_title = $_GET["title"];
+$mov_new_cdn = $_GET["cdn"];
+$mov_new_info = $_GET["info"];
+$mov_new_cover = $_GET["cover"];
+$mov_new_background = $_GET["background"];
+
+// Create connection
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "UPDATE `movies` SET `cover`='$mov_new_cover',`cdn`='$mov_new_cdn',`title`='$mov_new_title',`image`='$mov_new_background',`info`='$mov_new_info' WHERE 1";
+$result = $conn->query($sql);
+if ($conn->query($sql) === TRUE) {
+	echo '<meta http-equiv="refresh" content="0; url=#" />';
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+}else{
+
+}
+?>
