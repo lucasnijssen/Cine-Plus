@@ -60,14 +60,14 @@ include_once("../phplib/config.php");
                             <form action="#" method="post">
                             <div class="form-group">
                                     <label>Aan</label>
-                                    <select class="form-control" required name="verify">
+                                    <select class="form-control" required name="ontvanger">
                                         <option>Selecteer een gebruiker</option>
                                         <?php include_once('formGetAdmin.php'); ?>
                                     </select>
-                                </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label>Bericht Titel</label>
-                                    <input type="text" class="form-control" required name="titel" maxlength="40" value="Zet hier een korte titel neer">
+                                    <input type="text" class="form-control" required name="titel" maxlength="40" placeholder="Zet hier een korte titel neer">
                                 </div><br>
                                 <div class="form-group">
                                     <label>Bericht</label>
@@ -96,11 +96,11 @@ include_once("../phplib/config.php");
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-$new_title = $_POST["title"];
-$new_bericht = $_POST["cdn"];
-$new_aan = $_POST["info"];
+$new_title = $_POST["titel"];
+$new_bericht = $_POST["bericht"];
+$new_aan = $_POST["ontvanger"];
 
-if(empty($new_aan) || empty($new_bericht)){
+if(empty($new_bericht)){
     echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
     die();
 }
@@ -113,10 +113,8 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$gebruikersid','$new_aan','$new_title','$new_bericht')";
-$result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
-    echo '<script>swal.fire("Bericht verzonden", "Je bericht is verzonden naar de gebruiker.", "success");</script>';
-	echo '<meta http-equiv="refresh" content="5; url=#" />';
+    echo "<script>Swal.fire({ icon: 'success', title: 'Bericht verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { window.location = '/admin/sendmessage.php'; })</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
