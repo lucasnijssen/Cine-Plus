@@ -138,7 +138,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE `movies` SET `cover`='$mov_new_cover',`cdn`='$mov_new_cdn',`title`='$mov_new_title',`image`='$mov_new_background',`info`='$mov_new_info' WHERE 1";
+$sql = "UPDATE `movies` SET `cover`='$mov_new_cover',`cdn`='$mov_new_cdn',`title`='$mov_new_title',`image`='$mov_new_background',`info`='$mov_new_info' WHERE id=$mid";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
 	echo '<meta http-equiv="refresh" content="0; url=#" />';
