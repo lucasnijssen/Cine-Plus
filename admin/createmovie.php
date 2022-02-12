@@ -122,7 +122,8 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO `movies`(`movie_id`, `cover`, `cdn`, `title`, `image`, `info`) VALUES ('$gen_uuid','$new_cover','$new_cdn','$new_title','$new_image','$new_info')";
 if ($conn->query($sql) === TRUE) {
-    echo "<script>Swal.fire({ icon: 'success', title: 'Film Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
+    $id = mysqli_insert_id($sql);
+    echo "<script>Swal.fire({ icon: 'success', title: 'Film Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = '/admin/show.php?id=" . $lid . "'; })</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
