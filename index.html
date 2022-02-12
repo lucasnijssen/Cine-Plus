@@ -47,6 +47,10 @@ include_once("./phplib/datacheck.php");
     
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/card.css" />
+    <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
@@ -82,7 +86,15 @@ include_once("./phplib/datacheck.php");
     <!-- nav -->
     <div id="nav" class="nav">
       <img class="nav__logo" src="images/cineplus-logo.png" alt="" />
-      <a href="/logout.html"><img class="nav__avatar" src="images/netflix-avatar.png" alt="" /></a>
+
+      <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><img class="nav__avatar" src="images/netflix-avatar.png" alt="" /></a>
+      <div class="dropdown-menu shadow dropdown-menu-end accountmenu">
+        <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+        <?php if($level >= 10) : ?>
+        <a class="dropdown-item" href="/admin/"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Administrator</a>
+        <?php endif; ?>
+        <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout.html"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Uitloggen</a>
+      </div>
     </div>
 
     <!-- header -->
@@ -288,5 +300,6 @@ include_once("./phplib/datacheck.php");
     
     <script src="/JS/ws-main.js?v=3"></script>
     <script src="/JS/main.js?v=3"></script>
+    <script src="/JS/bootstrap.min.js"></script>
   </body>
 </html>
