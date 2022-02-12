@@ -7,7 +7,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "select * from users";
+    $sql = "SELECT * FROM `users` WHERE `verify` > 0";
 
     $result = $conn->query($sql);
     $user_count = $result->num_rows;
