@@ -163,7 +163,7 @@ if ($conn->connect_error) {
 $sql = "UPDATE `users` SET `username`='$usr_new_username',`ranglevel`='$usr_new_rang',`verify`='$usr_new_verify' WHERE id=$mid";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
-	echo '<meta http-equiv="refresh" content="0; url=#" />';
+	echo "<script>Swal.fire({ icon: 'success', title: 'Informatie Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";} else {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
