@@ -64,19 +64,19 @@ include_once("../phplib/config.php");
                                 </div><br>
                                 <div class="form-group">
                                     <label>Film infocard</label>
-                                    <input type="text" class="form-control" required name="info" maxlength="50" placeholder="Zet hier een omschrijving van de film">
+                                    <input type="text" class="form-control" required name="info" maxlength="255" placeholder="Zet hier een omschrijving van de film">
                                 </div><br>
                                 <div class="form-group">
                                     <label>CDN</label>
-                                    <input type="url" class="form-control" required name="cdn" placeholder="Zet hier een URL naar de CDN">
+                                    <input type="url" class="form-control" required name="cdn" maxlength="255" placeholder="Zet hier een URL naar de CDN">
                                 </div><br>
                                 <div class="form-group">
                                     <label>Thumbnail</label>
-                                    <input type="url" class="form-control" required name="cover" placeholder="Zet hier een URL naar de Thumbnail">
+                                    <input type="url" class="form-control" required name="cover" maxlength="255" placeholder="Zet hier een URL naar de Thumbnail">
                                 </div><br>
                                 <div class="form-group">
                                     <label>Popup Background</label>
-                                    <input type="url" class="form-control" required name="image" placeholder="Zet hier een URL naar de popup background">
+                                    <input type="url" class="form-control" required name="image" maxlength="255" placeholder="Zet hier een URL naar de popup background">
                                 </div><br>
                                 <br><button type="submit" class="btn btn-primary">Opslaan</button>
                             </form>
