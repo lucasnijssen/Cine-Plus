@@ -33,6 +33,7 @@ if ($result->num_rows > 0) {
         echo $status;
         echo '<td>' . $urang . '</td>';
         echo '<td>' . $date . '</td>';
+        echo "<td><a href='./showuser.php?id=" . $row["id"]. "' class='btn btn-success' role='button' style='margin: inherit;'>Info</a></td>";
         echo '</tr>';
     }
 } else {
