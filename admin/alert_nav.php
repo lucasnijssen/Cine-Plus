@@ -68,7 +68,7 @@
                     if ($result2->num_rows > 0) {
                     // output data of each row
                     while($row = $result2->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="Swal.fire({ title: `' . $row["message_short"] . '`,text: `' . $row["message"] . '`, showConfirmButton: false}).then((result) => { ws.send(JSON.stringify({ id: `admin-message-read`, message_id: `' . $row["id"] . '` })); })">';
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="Swal.fire({ title: `' . $row["message_short"] . '`,text: `' . $row["message"] . '`, showConfirmButton: true}).then((result) => { ws.send(JSON.stringify({ id: `admin-message-read`, message_id: `' . $row["id"] . '` })); })">';
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
                         echo '</div>';
                         echo '<div class="fw-bold">';
