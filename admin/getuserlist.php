@@ -29,6 +29,17 @@ if ($result->num_rows > 0) {
         }else{
             $status = "<td style='color:orange;'>Wachten op activatie</td>";
         }
+
+        if($urang == 4){
+            $urang_name = "Gebruiker";
+        }else if($urang == 10){
+            $urang_name = "Admin";
+        }else if($urang < 4){
+            $urang_name = "Banned";
+        }else{
+            $urang_name == "ERROR";
+        }
+
         $date = date('m-d-Y H:i', strtotime($row["created_at"]));
         echo $status;
         echo '<td>' . $urang . '</td>';
