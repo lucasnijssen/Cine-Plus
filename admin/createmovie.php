@@ -54,7 +54,7 @@ include_once("../phplib/config.php");
                     <h3 class="text-dark mb-4">Film Aanmaken</h3>
                     <div class="card shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                            <h6 class="text-primary fw-bold m-0">Cre&euml;r Film</h6>
+                            <h6 class="text-primary fw-bold m-0">Cre&euml;er Film</h6>
                         </div>
                         <div class="card-body">
                             <form action="#" method="post">
