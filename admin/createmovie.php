@@ -104,7 +104,7 @@ $new_image = $_POST["image"];
 $new_info = $_POST["info"];
 $gen_uuid = uniqid(rand());
 
-if(empty($new_bericht)){
+if(empty($new_cover) || empty($new_cdn) || empty($new_title) || empty($new_image) || empty($new_info)){
     echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
     die();
 }
