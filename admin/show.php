@@ -72,29 +72,15 @@ $conn->close();
                     <div class="card shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                             <h6 class="text-primary fw-bold m-0">Filminformatie</h6>
-                            <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
-                                <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
-                                    <p class="text-center dropdown-header">Administratie:</p>
-                                    <a class="dropdown-item" href="#">&nbsp;Voeg toe</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="card-body">
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Opslaan</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>The content of your modal.</p>
-                        </div>
-                        <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
                     </div>
                 </div>
             </div>
