@@ -16,6 +16,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $mov_title = $row["title"];
         $mov_cdn = $row["cdn"];
+        $mov_cover = $row["cover"];
+        $mov_background = $row["image"];
+        $mov_info = $row["info"];
     }
 } else {
 
@@ -76,16 +79,31 @@ $conn->close();
                         </div>
                         <div class="card-body">
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
-                            <form>
+                            <form action="post">
                                 <div class="form-group">
                                     <label for="cdn">Titel</label>
                                     <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
                                 </div>
                                 <div class="form-group">
+                                    <label for="cdn">INFO</label>
+                                    <input type="url" class="form-control" id="info" name="info" value="<?php echo $mov_info; ?>">
+                                </div>
+                                <div class="form-group">
                                     <label for="cdn">CDN</label>
                                     <input type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Opslaan</button>
+                                <div class="form-group">
+                                    <label for="cover">Cover Image (Small)</label>
+                                    <input type="url" class="form-control" id="cover" name="cover" value="<?php echo $mov_cover; ?>">
+                                    <small id="cover" class="form-text text-muted"><img src=<?php echo $mov_cover; ?>></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="background">Popup Background</label>
+                                    <input type="url" class="form-control" id="background" name="background" value="<?php echo $mov_background; ?>">
+                                    <small id="background" class="form-text text-muted"><img src=<?php echo $mov_background; ?>></small>
+                                </div>
+                                <br><button type="submit" class="btn btn-primary">Opslaan</button>
+                            </form>
                         </div>
                     </div>
                 </div>
