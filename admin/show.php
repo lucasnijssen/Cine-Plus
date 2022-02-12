@@ -39,6 +39,7 @@ $conn->close();
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -86,7 +87,7 @@ $conn->close();
                                 </div><br>
                                 <div class="form-group">
                                     <label>INFO</label>
-                                    <input type="url" class="form-control" name="info" value="<?php echo $mov_info; ?>">
+                                    <input type="text" class="form-control" name="info" value="<?php echo $mov_info; ?>">
                                 </div><br>
                                 <div class="form-group">
                                     <label>CDN</label>
@@ -125,11 +126,16 @@ $conn->close();
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-$mov_new_title = $_GET["title"];
-$mov_new_cdn = $_GET["cdn"];
-$mov_new_info = $_GET["info"];
-$mov_new_cover = $_GET["cover"];
-$mov_new_background = $_GET["background"];
+$mov_new_title = $_POST["title"];
+$mov_new_cdn = $_POST["cdn"];
+$mov_new_info = $_POST["info"];
+$mov_new_cover = $_POST["cover"];
+$mov_new_background = $_POST["background"];
+
+if(empty($mov_new_title) || empty($mov_new_cdn) || empty($mov_new_info) ||  empty($mov_new_cover) ||  empty($mov_new_background)){
+    echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
+    die();
+}
 
 // Create connection
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
