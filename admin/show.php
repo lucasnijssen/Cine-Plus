@@ -146,7 +146,7 @@ if ($conn->connect_error) {
 $sql = "UPDATE `movies` SET `cover`='$mov_new_cover',`cdn`='$mov_new_cdn',`title`='$mov_new_title',`image`='$mov_new_background',`info`='$mov_new_info' WHERE id=$mid";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
-	echo "<script>Swal.fire({ icon: 'success', title: 'Informatie Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";} else {
+	echo "<script>Swal.fire({ icon: 'success', title: 'Informatie Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { window.location = window.location.href; })</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
