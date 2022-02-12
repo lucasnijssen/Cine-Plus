@@ -52,7 +52,7 @@ if ($conn->connect_error) {
 $sql = "DELETE FROM `movies` WHERE `id` = $deleteprod_id";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
-	echo "<script>Swal.fire({ icon: 'success', title: 'Film verwijderd', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
+	echo "<script>Swal.fire({ icon: 'success', title: 'Film verwijderd', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('?delmov=". $deleteprod_id . "', ''); window.location.href = red; })</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
