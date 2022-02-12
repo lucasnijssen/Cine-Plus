@@ -26,6 +26,15 @@ ws.onopen = () => {
     if(obj.info == "movie-carddata"){
       openModal(obj.title, obj.image, obj.desc, obj.id);
     }
+    if(obj.info == "admin-alert"){
+      Swal.fire({
+        icon: 'info',
+        title: obj.title,
+        text: obj.text,
+        showConfirmButton: false,
+        timer: 3000
+      })
+    }
     
     if(obj.info == "recieved_test"){
       console.log("Test command was ran!")

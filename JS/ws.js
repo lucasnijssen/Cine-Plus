@@ -28,7 +28,15 @@ ws.onopen = () => {
     if(getUrlVars2()["debug"] == "true"){
       console.log(obj.msg);
     }
-    
+    if(obj.info == "admin-alert"){
+      Swal.fire({
+        icon: 'info',
+        title: obj.title,
+        text: obj.text,
+        showConfirmButton: false,
+        timer: 3000
+      })
+    }    
     if(obj.info == "recieved_test"){
       console.log("Test command was ran!")
       alert("Connection test successvol!");

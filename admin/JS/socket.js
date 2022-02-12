@@ -43,7 +43,6 @@ ws.onopen = () => {
          msg: "I want to test the connection!"
        }));
   }
-
   document.addEventListener('keypress', logKey);
   
   function logKey(e) {

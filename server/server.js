@@ -13,6 +13,16 @@ var con = mysql.createConnection({
 
 var aWss = appWs.getWss('/server');
 
+function sendAlertAll(titel, text){
+  aWss.clients.forEach(function (client) {
+    client.send(JSON.stringify({
+      info: 'admin-alert',
+      title: titel,
+      text: text
+    }));
+  });
+}
+
 app.ws('/server', ws => {
 
     function sendOne(info, text){
@@ -42,6 +52,10 @@ app.ws('/server', ws => {
           }
           if(obj2.id == 'Test'){
             sendOne("recieved_test", "The test was well recieved!");
+            return;
+          }
+          if(obj2.id == 'send-admin-alert'){
+            sendAlertAll(obj2.titel, obj2.text);
             return;
           }
           if(obj2.id == 'hearbeat'){
