@@ -96,7 +96,7 @@ if(empty($new_bericht) || empty($new_title)){
     echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
     die();
 }else{
-    echo '<script> function sendAlertOut() { ws.send(JSON.stringify({ id: "Test", msg: "I want to test the connection!" })); } </script>';
+    echo '<script> function sendAlertOut() { ws.send(JSON.stringify({ id: "Test", msg: "I want to test the connection!" })); } sendAlertOut();</script>';
     echo "<script>Swal.fire({ icon: 'success', title: 'Alert Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
 }
 
