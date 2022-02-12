@@ -96,12 +96,12 @@ $conn->close();
                                 <div class="form-group">
                                     <label>Cover Image (Small)</label>
                                     <input type="url" class="form-control" name="cover" value="<?php echo $mov_cover; ?>">
-                                    <small class="form-text text-muted"><img style="max-width: 10%;" src=<?php echo $mov_cover; ?>></small>
+                                    <small class="form-text text-muted"><img style="max-width: 10%;margin-top: 0.3%;" src=<?php echo $mov_cover; ?>></small>
                                 </div><br>
                                 <div class="form-group">
                                     <label>Popup Background</label>
                                     <input type="url" class="form-control" name="background" value="<?php echo $mov_background; ?>">
-                                    <small class="form-text text-muted"><img style="max-width: 20%;" src=<?php echo $mov_background; ?>></small>
+                                    <small class="form-text text-muted"><img style="max-width: 20%;margin-top: 0.3%;" src=<?php echo $mov_background; ?>></small>
                                 </div>
                                 <br><button type="submit" class="btn btn-primary">Opslaan</button>
                             </form>
