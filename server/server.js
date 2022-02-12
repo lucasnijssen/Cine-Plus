@@ -87,11 +87,15 @@ app.ws('/server', ws => {
                 });
             return;
           }
+          if(obj2.id == 'admin-message-read'){
+            con.query("UPDATE `admin_messages` SET `readed`=1 WHERE `id` = '" + obj2.message_id + "'" , function (err, result, fields) { });
+            return;
+          }
       });
   });
 
 
-  app.listen(4009, () => {
+  app.listen(9020, () => {
     console.log('Server has been started'); 
     console.log('Startup Done.')
   });
