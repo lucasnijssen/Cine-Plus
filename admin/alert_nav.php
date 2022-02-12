@@ -7,7 +7,7 @@
     }
 
     $sql = "select * from admin_alerts";
-    $sql2 = "select * from admin_messages WHERE getter='$gebruikersid'";
+    $sql2 = "select * from admin_messages WHERE getter='$gebruikersid' AND readed != 1";
 
     $result = $conn->query($sql);
     $result2 = $conn->query($sql2);
