@@ -114,3 +114,4 @@
         </div>
     </div>
 </li>
+<script src="JS/socket.js"></script>
