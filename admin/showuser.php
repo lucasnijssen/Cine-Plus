@@ -28,8 +28,8 @@ if ($result->num_rows > 0) {
             $usr_rang_name = "Gebruiker";
         }else if($usr_rang == 10){
             $usr_rang_name = "Admin";
-        }else if($usr_rang == 2){
-            $usr_rang_name == "Banned";
+        }else if($usr_rang < 4){
+            $usr_rang_name = "Banned";
         }else{
             $usr_rang_name == "ERROR";
         }
