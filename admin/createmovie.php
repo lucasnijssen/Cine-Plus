@@ -71,6 +71,10 @@ include_once("../phplib/config.php");
                                     <input type="url" class="form-control" required name="cdn" placeholder="Zet hier een URL naar de CDN">
                                 </div><br>
                                 <div class="form-group">
+                                    <label>Thumbnail</label>
+                                    <input type="url" class="form-control" required name="cover" placeholder="Zet hier een URL naar de Thumbnail">
+                                </div><br>
+                                <div class="form-group">
                                     <label>Popup Background</label>
                                     <input type="url" class="form-control" required name="image" placeholder="Zet hier een URL naar de popup background">
                                 </div><br>
