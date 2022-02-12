@@ -83,24 +83,24 @@ $conn->close();
                                 <div class="form-group">
                                     <label for="cdn">Titel</label>
                                     <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
-                                </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="cdn">INFO</label>
                                     <input type="url" class="form-control" id="info" name="info" value="<?php echo $mov_info; ?>">
-                                </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="cdn">CDN</label>
                                     <input type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
-                                </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="cover">Cover Image (Small)</label>
                                     <input type="url" class="form-control" id="cover" name="cover" value="<?php echo $mov_cover; ?>">
-                                    <small id="cover" class="form-text text-muted"><img src=<?php echo $mov_cover; ?>></small>
-                                </div>
+                                    <small id="cover" class="form-text text-muted"><img style="max-width: 10%;" src=<?php echo $mov_cover; ?>></small>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="background">Popup Background</label>
                                     <input type="url" class="form-control" id="background" name="background" value="<?php echo $mov_background; ?>">
-                                    <small id="background" class="form-text text-muted"><img src=<?php echo $mov_background; ?>></small>
+                                    <small id="background" class="form-text text-muted"><img style="max-width: 20%;" src=<?php echo $mov_background; ?>></small>
                                 </div>
                                 <br><button type="submit" class="btn btn-primary">Opslaan</button>
                             </form>
