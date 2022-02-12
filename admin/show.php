@@ -78,8 +78,12 @@ $conn->close();
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
                             <form>
                                 <div class="form-group">
-                                    <input style="width:auto;" type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
-                                    <input style="width:auto;" type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
+                                    <label for="cdn">Titel</label>
+                                    <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cdn">CDN</label>
+                                    <input type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Opslaan</button>
                         </div>
