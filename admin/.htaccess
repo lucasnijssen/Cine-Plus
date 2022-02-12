@@ -1,0 +1,3 @@
+ErrorDocument 404 https://cine-plus.nl/admin/404.html
+AddType application/x-httpd-php .html .htm 
+RedirectMatch 403 /\.git
