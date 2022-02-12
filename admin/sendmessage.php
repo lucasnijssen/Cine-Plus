@@ -136,8 +136,8 @@ $sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
-    require_once "../phplib/Mail.php"
-    require_once "../phplib/mailerconfig.php"
+    require_once "../phplib/Mail.php";
+    require_once "../phplib/mailerconfig.php";
     $to = $gebruiker_mail;
     $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
     $email_subject = "[ADMIN] Bericht ontvangen" ;
