@@ -112,9 +112,42 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM `users` WHERE `id` = $new_aan";
+
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $gebruiker_mail = $row["username"];
+    }
+} else {
+
+}
+$conn->close();
+
+
 $sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$gebruikersid','$new_aan','$new_title','$new_bericht')";
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
+    error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
+    require_once "../phplib/Mail.php"
+    require_once "../phplib/mailerconfig.php"
+    $to = $gebruiker_mail;
+    $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
+    $email_subject = "[ADMIN] Bericht ontvangen" ;
+    $email_body = '<p>Je hebt een nieuw bericht ontvangen in het admin portal.<br><br>Met vriendelijke groet,<br>Cine-Plus';
+    $email_address = "welcome@registration.cine-plus.nl";
+  
+    $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
+    $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $usname, 'password' => $password));
+    $mail = $smtp->send($to, $headers, $email_body);
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -122,4 +155,5 @@ if ($conn->query($sql) === TRUE) {
 }else{
 
 }
+$conn->close();
 ?>
