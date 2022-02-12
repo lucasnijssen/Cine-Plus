@@ -144,7 +144,7 @@ $usr_new_rang = $_POST["rang"];
 $usr_new_username = $_POST["username"];
 $usr_new_verify = $_POST["verify"];
 
-if(empty($usr_new_rang) || empty($usr_new_username) || empty($usr_new_verify)){
+if(empty($usr_new_rang) || empty($usr_new_username) || $usr_new_verify >= 0){
     echo '<script>swal.fire("Er ging iets mis...", "Een van de opgegevens blijkt leeg te zijn of niet te werken.", "error");</script>';
     die();
 }
