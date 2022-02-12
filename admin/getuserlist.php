@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["username"] . '</td>';
         $ustat = $row["verify"];
         $urang = $row["ranglevel"];
-        if($ustat = 1 && $urang >= 4){
+        if($ustat == 1 && $urang >= 4){
             $status = "Actief";
         }else if($ustat == 1 && $urang < 4){
             $status = "Verbannen";
