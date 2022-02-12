@@ -15,6 +15,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $mov_title = $row["title"];
+        $mov_cdn = $row["cdn"];
     }
 } else {
 
@@ -77,7 +78,8 @@ $conn->close();
                             <p>Ja heel mooi, dit heb ik dus nog niet gemaakt</p>
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
+                                    <input style="width:auto;" type="text" class="form-control" id="titel" name="title" value="<?php echo $mov_title; ?>">
+                                    <input style="width:auto;" type="url" class="form-control" id="cdn" name="cdn" value="<?php echo $mov_cdn; ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Opslaan</button>
                         </div>
