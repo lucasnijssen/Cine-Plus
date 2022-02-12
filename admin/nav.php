@@ -6,7 +6,7 @@ include_once("checkrank.php");
     <li class="nav-item"><a class="nav-link" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a></li>
     <li class="nav-item"><a class="nav-link" href="movies.html"><i class="fas fa-table"></i><span>Films</span></a></li>
     <li class="nav-item"><a class="nav-link" href="users.html"><i class="fas fa-user"></i><span>Gebruikers</span></a></li>
-    <?php if($level >= 15) : ?>
+    <?php if($usr_rank >= 15) : ?>
     <li class="nav-item"><a class="nav-link" href="users.html"><i class="fas fa-warning"></i><span>Systeem Alert</span></a></li>
     <?php endif; ?>
 </ul>
