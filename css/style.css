@@ -393,6 +393,11 @@ body {
   background-color: transparent;
   border: 0;
 }
+.dropdown-item:hover {
+  color: #fff;
+  background-color: #c60000;
+  border-color: #7f97b200;
+}
 .dropdown-menu-end {
   --bs-position: end;
 }
