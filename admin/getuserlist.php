@@ -30,10 +30,19 @@ if ($result->num_rows > 0) {
             $status = "<td style='color:orange;'>Wachten op activatie</td>";
         }
 
-        $usr_rang = $urang;
-        include_once('getUsrRankName.php');
-
-        $urang_name = $usr_rang_name;
+        if($urang == 4){
+            $urang_name = "Gebruiker";
+        }else if($urang == 10){
+            $urang_name = "Admin";
+        }else if($urang == 15){
+            $urang_name = "Super Admin";
+        }else if($urang == 20){
+            $urang_name = "Owner";
+        }else if($urang < 4){
+            $urang_name = "Banned";
+        }else{
+            $urang_name == "ERROR";
+        }
 
         $date = date('m-d-Y H:i', strtotime($row["created_at"]));
         echo $status;
