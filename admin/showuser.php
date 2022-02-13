@@ -105,6 +105,15 @@ $conn->close();
                                 </div><br>
                                 <div class="form-group">
                                     <label>Rang</label>
+                                    <?php if($usr_rang >= 20) : ?>
+                                    <select class="form-control" disabled name="rang">
+                                        <option value="<?php echo $usr_rang; ?>"><?php echo $usr_rang_name; ?></option>
+                                        <option value="2">Banned</option>
+                                        <option value="4">Gebruiker</option>
+                                        <option value="10">Admin</option>
+                                        <option value="15">Super Admin</option>
+                                    </select>
+                                    <?php else if($usr_rang < 20) : ?>
                                     <select class="form-control" name="rang">
                                         <option value="<?php echo $usr_rang; ?>"><?php echo $usr_rang_name; ?></option>
                                         <option value="2">Banned</option>
@@ -112,6 +121,7 @@ $conn->close();
                                         <option value="10">Admin</option>
                                         <option value="15">Super Admin</option>
                                     </select>
+                                    <?php endif; ?>
                                 </div><br>
                                 <div class="form-group">
                                     <label>Verificatie voltooid?</label>
