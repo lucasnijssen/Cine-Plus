@@ -6,12 +6,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST["zoek"]) || !empty($_POST["zoek"])){
-    $zoek = $_POST["zoek"];
-    $sql = "SELECT * FROM `admin_messages` WHERE `title` LIKE '%" . $zoek . "%'";
-}else{
-    $sql = "SELECT * FROM `movies`";
-}
+$sql = "SELECT * FROM `admin_messages` WHERE getter= $gebruikersid";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
