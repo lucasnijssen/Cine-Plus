@@ -1,58 +1,23 @@
-.sidebar-dark .nav-item .nav-link.active, .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
-    color: #fff!important;
-}
-.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: rgba(255,255,255,.75)!important;
-}
-.sidebar .nav-item.dropdown .dropdown-toggle::after, .topbar .nav-item.dropdown .dropdown-toggle::after {
-    width: 1rem;
-    text-align: center!important;
-    float: right!important;
-    vertical-align: 0!important;
-    border: 0!important;
-    font-weight: 900!important;
-    content: ""!important;
-    font-family: "Font Awesome 5 Free"!important;
-}
-@media (min-width: 576px) {
-    .dropdown .dropdown-menu {
-      width: auto!important;
-      right: 0!important;
-    }
-}
 .dropdown .dropdown-menu {
-    width: calc(100% - 1.5rem)!important;
-    right: .75rem!important;
-    font-size: .85rem!important;
-  }
-  .dropdown-menu {
-    position: absolute!important;
-    z-index: 1000!important;
-    display: none!important;
-    min-width: 10rem!important;
-    padding: .5rem 0!important;
-    margin: 0!important;
-    font-size: 0.85rem!important;
-    color: #858796!important;
-    text-align: left!important;
-    list-style: none!important;
-    background-color: #fff!important;
-    background-clip: padding-box!important;
-    border: 1px solid #e3e6f0!important;
-    border-radius: .35rem!important;
-  }
-  .dropdown-item.active, .dropdown-item:active {
-    color: #fff!important;
-    text-decoration: none!important;
-    background-color: #4e73df!important;
-  }
-  .dropdown-item:hover, .dropdown-item:focus {
-    color: #34353e!important;
-    background-color: #eaecf4!important;
-  }
-  a:focus {
-    outline: none!important;
-  }
-  a:hover {
-    color: #3e5cb2!important;
-  }  
+  background: #a50300!important;
+  border-style: hidden;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+color: rgba(255,255,255,.8)!important;
+background-color: #a50300!important;
+}
+.dropdown-item {
+color: rgba(255,255,255,.8)!important;
+}
+.dropdown-item i {
+font-size: .85rem;
+margin-right: 0.25rem;
+color: rgba(255,255,255,.3)!important;
+padding: 1rem;
+}
+.dropdown-item:hover i {
+font-size: .85rem;
+margin-right: 0.25rem;
+color: rgb(255, 255, 255)!important;
+}
+

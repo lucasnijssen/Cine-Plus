@@ -1,13 +1,15 @@
 <?php
 include_once("checkrank.php");
 ?>
-<link rel="stylesheet" href="assets/bootstrap/css/custom.css">
+<link rel="stylesheet" href="assets/bootstrap/css/custom.css?v=20">
 <ul class="navbar-nav text-light" id="accordionSidebar">
     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-    <li class="nav-item"><a class="nav-link" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a></li>
-
-    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Dropdown </a>
-        <div class="dropdown-menu"><a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a>
+    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Berichten </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" style="padding-top:0rem" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a>
+            <a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Ontvangen</span></a>
+            <a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Verzonden</span></a>
+        </div>
     </li>
 
     <li class="nav-item"><a class="nav-link" href="movies.html"><i class="fas fa-table"></i><span>Films</span></a></li>
