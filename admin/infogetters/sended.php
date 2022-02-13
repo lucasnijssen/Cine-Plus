@@ -30,7 +30,6 @@ if ($result->num_rows > 0) {
                 } else {
                     $sendername = "Onbekend";
                 }
-                $conn->close();
         }
         echo '<td>' . $sendername . '</td>';
         echo "<td><a href='javascript:void(0);'  onclick='showNumer" . $row['id'] . "();' class='btn btn-success' role='button' style='margin: inherit;'>Bekijk</a>";
