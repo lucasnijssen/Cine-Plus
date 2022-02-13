@@ -16,13 +16,13 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["message_short"] . '</td>';
 
         $senderid = $row["user"];
-        $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+        $conn2 = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
         if($senderid == "s"){
             $sendername = "Systeem";
             $conn->close();
         }else{
             $sql3 = "select * from users WHERE id=$senderid";
-            $result3 = $conn->query($sql3);
+            $result3 = $conn2->query($sql3);
             if ($result3->num_rows > 0) {
                 while($row = $result3->fetch_assoc()) {
                     $sendername = $row["username"];
@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
                 } else {
                     $sendername = "Onbekend";
                 }
+                $conn2->close();
         }
         echo '<td>' . $sendername . '</td>';
         echo "<td><a href='javascript:void(0);'  onclick='showNumer" . $row['id'] . "();' class='btn btn-success' role='button' style='margin: inherit;'>Bekijk</a>";
