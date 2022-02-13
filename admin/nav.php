@@ -7,7 +7,7 @@ include_once("checkrank.php");
     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Berichten </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" style="padding-top:0rem" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a>
-            <a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Ontvangen</span></a>
+            <a class="dropdown-item" href="ontvangen.html"><i class="fas fa-envelope"></i><span>Ontvangen</span></a>
             <a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Verzonden</span></a>
         </div>
     </li>
