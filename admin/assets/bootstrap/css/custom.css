@@ -1,0 +1,58 @@
+.sidebar-dark .nav-item .nav-link.active, .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
+    color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255,255,255,.75);
+}
+.sidebar .nav-item.dropdown .dropdown-toggle::after, .topbar .nav-item.dropdown .dropdown-toggle::after {
+    width: 1rem;
+    text-align: center;
+    float: right;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: "";
+    font-family: "Font Awesome 5 Free";
+}
+@media (min-width: 576px) {
+    .dropdown .dropdown-menu {
+      width: auto;
+      right: 0;
+    }
+}
+.dropdown .dropdown-menu {
+    width: calc(100% - 1.5rem);
+    right: .75rem;
+    font-size: .85rem;
+  }
+  .dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #858796;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+  }
+  .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #4e73df;
+  }
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: #34353e;
+    background-color: #eaecf4;
+  }
+  a:focus {
+    outline: none;
+  }
+  a:hover {
+    color: #3e5cb2;
+  }  
