@@ -24,8 +24,8 @@ if ($result->num_rows > 0) {
             $sql3 = "select * from users WHERE id=$senderid";
             $result3 = $conn2->query($sql3);
             if ($result3->num_rows > 0) {
-                while($row = $result3->fetch_assoc()) {
-                    $sendername = $row["username"];
+                while($row2 = $result3->fetch_assoc()) {
+                    $sendername = $row2["username"];
                     }
                 } else {
                     $sendername = "Onbekend";
