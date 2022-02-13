@@ -28,15 +28,15 @@
             echo '</span>';
         }
         ?><i class="fas fa-bell fa-fw"></i></a>
-        <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+        <div style="background:mintcream;" class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
             <h6 class="dropdown-header">alerts center</h6>
                 <?php 
                     if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["short"] . '`, `' . $row["text"] . '`);">';
+                        echo '<a style="color:black!important" class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["short"] . '`, `' . $row["text"] . '`);">';
                         echo '<div class="me-3">';
-                        echo '<div class="bg-primary icon-circle"><i class="fas fa-' . $row["type"] . ' text-white"></i></div>';
+                        echo '<div class="bg-primary icon-circle"><i style="margin-right:0rem;" class="fas fa-' . $row["type"] . ' text-white"></i></div>';
                         echo '</div>';
                         $date = date('F j Y', strtotime($row["datum"]));
                         echo '<div><span class="small text-gray-500">' . $date . '</span>';
@@ -63,13 +63,13 @@
             echo '</span>';
         }
         ?></span><i class="fas fa-envelope fa-fw"></i></a>
-        <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+        <div style="background:mintcream;" class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
             <h6 class="dropdown-header">alerts center</h6>
                 <?php 
                     if ($result2->num_rows > 0) {
                     // output data of each row
                     while($row = $result2->fetch_assoc()) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="Swal.fire({ title: `' . $row["message_short"] . '`,text: `' . $row["message"] . '`, showConfirmButton: true}).then((result) => { ws.send(JSON.stringify({ id: `admin-message-read`, message_id: `' . $row["id"] . '` })); let url = window.location.href; let red = url.replace(`#`, ``); window.location.href = red; })">';
+                        echo '<a style="color:black!important" class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="Swal.fire({ title: `' . $row["message_short"] . '`,text: `' . $row["message"] . '`, showConfirmButton: true}).then((result) => { ws.send(JSON.stringify({ id: `admin-message-read`, message_id: `' . $row["id"] . '` })); let url = window.location.href; let red = url.replace(`#`, ``); window.location.href = red; })">';
                         echo '<div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">';
                         echo '</div>';
                         echo '<div class="fw-bold">';
