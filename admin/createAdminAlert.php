@@ -131,3 +131,8 @@ if ($conn->query($sql) === TRUE) {
 ?>
 
 
+<?php
+if($usr_rank < 20){
+    header("location: /index.html");
+}
+?>

@@ -36,6 +36,8 @@ if ($result->num_rows > 0) {
             $urang_name = "Admin";
         }else if($urang == 15){
             $urang_name = "Super Admin";
+        }else if($urang == 20){
+            $urang_name = "Owner";
         }else if($urang < 4){
             $urang_name = "Banned";
         }else{

@@ -96,3 +96,8 @@ include_once("../phplib/config.php");
 </script>
 
 
+<?php
+if($usr_rank < 15){
+    header("location: /index.html");
+}
+?>
