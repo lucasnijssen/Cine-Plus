@@ -59,7 +59,7 @@ include_once("../phplib/config.php");
                         <div class="card-body">
                             <form action="#" method="post">
                             <div class="form-group">
-                                    <label>Aan</label>
+                                    <label>Type Melding</label>
                                     <select class="form-control" required name="type">
                                         <option>Selecteer een gebruiker</option>
                                         <option value="info">Info</option>
@@ -119,7 +119,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO `admin_alerts`(`short`, `text`, `text`) VALUES ('$new_title','$new_bericht','$new_type')";
+$sql = "INSERT INTO `admin_alerts`(`short`, `text`, `type`) VALUES ('$new_title','$new_bericht','$new_type')";
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
 
