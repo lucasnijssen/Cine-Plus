@@ -1,7 +1,7 @@
 <?php
 include_once("checkrank.php");
 ?>
-<link rel="stylesheet" href="assets/bootstrap/css/custom.css?v=20">
+<link rel="stylesheet" href="assets/bootstrap/css/custom.css?v=21">
 <ul class="navbar-nav text-light" id="accordionSidebar">
     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Berichten </a>

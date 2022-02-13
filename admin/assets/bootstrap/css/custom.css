@@ -1,6 +1,8 @@
 .dropdown .dropdown-menu {
   background: #a50300!important;
   border-style: hidden;
+  position: absolute;
+
 }
 .dropdown-item:hover, .dropdown-item:focus {
 color: rgba(255,255,255,.8)!important;
