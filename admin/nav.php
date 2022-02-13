@@ -1,6 +1,7 @@
 <?php
 include_once("checkrank.php");
 ?>
+<link rel="stylesheet" href="assets/bootstrap/css/custom.css">
 <ul class="navbar-nav text-light" id="accordionSidebar">
     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
     <li class="nav-item"><a class="nav-link" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a></li>
