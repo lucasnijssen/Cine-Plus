@@ -66,7 +66,7 @@ include_once("../phplib/config.php");
                             <div class="form-group">
                                     <label>Type Melding</label>
                                     <select class="form-control" required name="type">
-                                        <option>Selecteer een gebruiker</option>
+                                        <option>Selecteer een type melding</option>
                                         <option value="info">Info</option>
                                         <option value="warning">Waarschuwing</option>
                                         <option value="calendar">Herinnering</option>
