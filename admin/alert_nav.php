@@ -44,7 +44,7 @@
                         echo '</div></a>';
                         }
                     } else {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
+                        echo '<a style="background:mintcream;color:black!important" class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
                         echo '<div><span class="small text-gray-500">-</span>';
                         echo '<p>Geen nieuwe meldingen</p>';
                         echo '</div></a>';
@@ -97,7 +97,7 @@
                         echo '</div></a>';
                         }
                     } else {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
+                        echo '<a style="background:mintcream;color:black!important" class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
                         echo '<div><span class="small text-gray-500">-</span>';
                         echo '<p>Geen nieuwe meldingen</p>';
                         echo '</div></a>';
