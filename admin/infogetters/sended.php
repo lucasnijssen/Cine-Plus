@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row["message_short"] . '</td>';
         echo "<td><a href='javascript:void(0);'  onclick='showNumer" . $row['id'] . "();' class='btn btn-success' role='button' style='margin: inherit;'>Bekijk</a>";
         echo "<a href='?delmov=" . $row["id"]. "' class='btn btn-danger' role='button' style='margin: inherit;'>Delete</a></td>";
-        echo "<script>function showNumer" . $row['id'] . "() { Swal.fire({ icon: 'success', title: 'Film verwijderd', showConfirmButton: false, timer: 3000, }) }</script>";
+        echo "<script>function showNumer" . $row['id'] . "() { Swal.fire({title: '" . $row["message_short"] . "',text:'" . $row["message"] . "', showConfirmButton: true }) }</script>";
         echo '</tr>';
     }
 } else {
