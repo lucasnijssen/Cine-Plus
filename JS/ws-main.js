@@ -50,7 +50,10 @@ ws.onopen = () => {
     }));
   },5000);
 
-  ws.onclose = () => console.log("[WSS] Disconnected");
+  ws.onclose = () => {
+    console.log("[WSS] Disconnected");
+    location.href = "/disconnected.html";
+  }
 
   function WebSocketTest() {
     ws.send(JSON.stringify({
