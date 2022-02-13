@@ -55,8 +55,10 @@ app.ws('/server', ws => {
             return;
           }
           if(obj2.id == 'send-admin-alert'){
-            sendAlertAll(obj2.titel, obj2.text);
-            con.query("INSERT INTO `admin_global_alerts`(`mes_title`, `mes_text`) VALUES ('" + obj2.titel + "', '" + obj2.text + "')" , function (err, result, fields) { });
+            
+            con.query("INSERT INTO `admin_global_alerts` (`mes_title`, `mes_text`) VALUES ('" + obj2.titel + "', '" + obj2.text + "')" , function (err, result) {
+              sendAlertAll(obj2.titel, obj2.text);
+             });
             return;
           }
           if(obj2.id == 'hearbeat'){

@@ -33,8 +33,9 @@ ws.onopen = () => {
         icon: 'info',
         title: obj.title,
         text: obj.text,
-        showConfirmButton: false,
-        timer: 3000
+        showConfirmButton: true,
+        allowOutsideClick: false,
+        timer: 5000
       })
     }    
     if(obj.info == "recieved_test"){
