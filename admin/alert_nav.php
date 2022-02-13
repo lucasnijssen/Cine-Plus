@@ -36,7 +36,7 @@
                     while($row = $result->fetch_assoc()) {
                         echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="swal.fire(`' . $row["short"] . '`, `' . $row["text"] . '`);">';
                         echo '<div class="me-3">';
-                        echo '<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>';
+                        echo '<div class="bg-primary icon-circle"><i class="fas fa-' . $row["type"] . ' text-white"></i></div>';
                         echo '</div>';
                         $date = date('F j Y', strtotime($row["datum"]));
                         echo '<div><span class="small text-gray-500">' . $date . '</span>';
@@ -44,6 +44,7 @@
                         echo '</div></a>';
                         }
                     } else {
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
                         echo '<div><span class="small text-gray-500">-</span>';
                         echo '<p>Geen nieuwe meldingen</p>';
                         echo '</div></a>';
@@ -96,6 +97,7 @@
                         echo '</div></a>';
                         }
                     } else {
+                        echo '<a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">';
                         echo '<div><span class="small text-gray-500">-</span>';
                         echo '<p>Geen nieuwe meldingen</p>';
                         echo '</div></a>';
