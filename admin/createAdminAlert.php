@@ -29,6 +29,11 @@ include_once("../phplib/config.php");
                 </a>
                 <hr class="sidebar-divider my-0">
                 <?php include_once('nav.php'); ?>
+                <?php
+                if($usr_rank < 20){
+                    header("location: /index.html");
+                }
+                ?>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
         </nav>
@@ -131,8 +136,3 @@ if ($conn->query($sql) === TRUE) {
 ?>
 
 
-<?php
-if($usr_rank < 20){
-    header("location: /index.html");
-}
-?>
