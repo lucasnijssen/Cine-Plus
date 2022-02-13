@@ -10,6 +10,6 @@ include_once("checkrank.php");
     <li class="nav-item"><a class="nav-link" href="sendAlert.html"><i class="fas fa-warning"></i><span>Systeem Alert</span></a></li>
     <?php endif; ?>
     <?php if($usr_rank >= 20) : ?>
-    <li class="nav-item"><a class="nav-link" href="sendAlert.html"><i class="fas fa-gear"></i><span>Admin Alert</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="createAdminAlert.php"><i class="fas fa-gear"></i><span>Admin Alert</span></a></li>
     <?php endif; ?>
 </ul>
