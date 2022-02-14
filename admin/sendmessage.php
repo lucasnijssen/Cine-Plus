@@ -68,7 +68,14 @@ include_once("../phplib/config.php");
                                 <div class="form-group">
                                     <label>Bericht Titel</label>
                                     <input type="text" class="form-control" required name="titel" maxlength="32" placeholder="Zet hier een korte titel neer">
-                                </div><br>
+                                </div>
+                                <?php if($gebruikersid = 1) : ?>
+                                <div class="form-group">
+                                    <label>Bericht Titel</label>
+                                    <input class="form-check-input" type="checkbox" value="" name="sysmes">
+                                </div>
+                                <?php endif; ?>
+                                <br>
                                 <div class="form-group">
                                     <label>Bericht</label>
                                     <input type="text" class="form-control" required name="bericht" placeholder="Type hier een bericht">
@@ -132,6 +139,12 @@ if ($result2->num_rows > 0) {
     die();
 }
 $conn2->close();
+
+if(isset($_POST['sysmes'])){
+    $new_afzender = "s";
+}else{
+    $new_afzender = $gebruikersid;
+}
 
 
 $sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$gebruikersid','$new_aan','$new_title','$new_bericht')";
