@@ -35,9 +35,9 @@ if ($result->num_rows > 0) {
         $messtat = $row["readed"];
 
         if($messtat == 0){
-            $readstat = "Ongelezen";
+            $readstat = '<i style="margin-right:0rem;" class="fas fa-envelope"></i>';
         }else{
-            $readstat = "Gelezen";
+            $readstat = '<i style="margin-right:0rem;" class="fas fa-envelope-open-o"></i>';
         }
         echo '<td>' . $sendername . '</td>';
         echo '<td>' . $readstat . '</td>';
