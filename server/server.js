@@ -54,6 +54,11 @@ app.ws('/server', ws => {
             sendOne("recieved_test", "The test was well recieved!");
             return;
           }
+          if(obj2.id == 'online-users'){
+            sendOne("total-online", aWss.clients.size);
+            console.log(aWss.clients.size);
+            return;
+          }
           if(obj2.id == 'send-admin-alert'){
             
             con.query("INSERT INTO `admin_global_alerts` (`mes_title`, `mes_text`) VALUES ('" + obj2.titel + "', '" + obj2.text + "')" , function (err, result) {

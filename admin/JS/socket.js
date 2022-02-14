@@ -26,6 +26,10 @@ ws.onopen = () => {
       console.log("Test command was ran!")
       alert("Connection test successvol!");
     }
+    if(obj.info == "total-online"){
+      let online = document.getElementById('online_users');
+      online.innerHTML = obj.msg;
+    }
   };
 
   const heartbeat = setInterval(function(){
@@ -33,6 +37,18 @@ ws.onopen = () => {
       id: "hearbeat",
       msg: "Im still alive!"
     }));
+  },5000);
+
+  const online = setInterval(function(){
+    var element =  document.getElementById('online_users');
+    if (typeof(element) != 'undefined' && element != null)
+    {
+      ws.send(JSON.stringify({
+        id: "online-users",
+        msg: "How many users are online?"
+      }));
+    }
+    
   },5000);
 
   ws.onclose = () => console.log("Well, you don`t need me anymore, im out! Goodbye client!");
