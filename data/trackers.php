@@ -1,4 +1,9 @@
-<!-- Hitsteps TRACKING CODE - Manual 2022-02-14 - DO NOT CHANGE -->
-<script type="text/javascript">(function(){var hstc=document.createElement('script'); hstc.src='https://log.hitsteps.net/track.php?code=7f107d1deb28b44925097fa2abc34e5b';hstc.async=true;var htssc = document.getElementsByTagName('script')[0];htssc.parentNode.insertBefore(hstc, htssc);})();
-</script><noscript><a href="http://www.hitsteps.com/"><img src="//log.hitsteps.net/track.php?mode=img&amp;code=7f107d1deb28b44925097fa2abc34e5b" alt="Realtime blog statistics" width="1" height="1" />Realtime Web Statistics</a></noscript>
-<!-- Hitsteps TRACKING CODE - DO NOT CHANGE -->
+<!-- Begin Web-Stat code v 7.0 -->
+<span id="wts2091536"></span>
+<script>var wts=document.createElement('script');wts.async=true;
+wts.src='https://app.ardalio.com/log7.js';document.head.appendChild(wts);
+wts.onload = function(){ wtslog7(2091536,2); };
+</script><noscript><a href="https://www.web-stat.com">
+<img src="https://app.ardalio.com/7/2/2091536.png" 
+alt="Web-Stat traffic analytics"></a></noscript>
+<!-- End Web-Stat code v 7.0 -->
