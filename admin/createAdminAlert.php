@@ -102,6 +102,7 @@ include_once("../phplib/config.php");
                                         <tr>
                                             <th>Titel</th>
                                             <th>Text</th>
+                                            <th>Icon</th>
                                             <th>Actie</th>
                                         </tr>
                                     </thead>
@@ -111,7 +112,8 @@ include_once("../phplib/config.php");
                                     <tfoot>
                                         <tr>
                                             <td><strong>Titel</strong></td>
-                                            <td><strong>Afzender</strong></td>
+                                            <td><strong>Text</strong></td>
+                                            <td><strong>Icon</strong></td>
                                             <td><strong>Actie</strong></td>
                                         </tr>
                                     </tfoot>
