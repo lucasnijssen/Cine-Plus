@@ -150,7 +150,14 @@ if(isset($_POST['sysmes'])){
 $sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$new_afzender','$new_aan','$new_title','$new_bericht')";
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
-
+    $audit_user = $gebruikersid;
+    $audit_actie = "Bericht verzonden";
+    if($new_afzender == "s"){
+        $audit_info = "Bericht verstuurd aan " . $new_usermail . " als Systeem";
+    }else{
+        $audit_info = "Bericht verstuurd aan " . $new_usermail . ".";
+    }
+    include_once("./infogetters/aditlog.php");
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
     require_once "Mail.php";
     require_once "../phplib/mailerconfig.php";
