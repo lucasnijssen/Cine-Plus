@@ -40,8 +40,19 @@ app.ws('/server', ws => {
         }));
       }
 
+      function IsJsonString(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
 
       ws.on('message', msg => {
+        if(IsJsonString(msg) == false){
+          return false;
+        }
           var obj2 = JSON.parse(msg);
           if(obj2.id == "hello"){
             ws.send(JSON.stringify({
