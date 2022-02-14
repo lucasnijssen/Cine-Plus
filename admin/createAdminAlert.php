@@ -89,6 +89,7 @@ include_once("../phplib/config.php");
                         </div>
                     </div>
                 </div>
+                <div class="container-fluid">
                 <div class="card shadow">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h6 class="text-primary fw-bold m-0">Verzonden Alerts</h6>
@@ -118,6 +119,7 @@ include_once("../phplib/config.php");
                             </div>
                         </div>
                     </div>
+                </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
                     <div class="text-center my-auto copyright"><span>Copyright © Cine-Plus Admin 2022</span></div>
