@@ -147,7 +147,7 @@ if(isset($_POST['sysmes'])){
 }
 
 
-$sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$gebruikersid','$new_aan','$new_title','$new_bericht')";
+$sql = "INSERT INTO `admin_messages`(`user`, `getter`, `message_short`, `message`) VALUES ('$new_afzender','$new_aan','$new_title','$new_bericht')";
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
 
