@@ -160,23 +160,11 @@ include_once("./phplib/datacheck.php");
 
     <!-- Top Rated -->
     <div class="row">
-      <h2>Top Rated</h2>
+      <h2>Educatie</h2>
       <div class="row__posters">
-        <img class="row__poster" src="images/small-movie1.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie2.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie3.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie4.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie5.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie6.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie7.jpg" alt="" />
-
-        <img class="row__poster" src="images/small-movie8.jpg" alt="" />
+        <?php
+        include_once("/data/movEd.php");
+        ?>
       </div>
     </div>
 
