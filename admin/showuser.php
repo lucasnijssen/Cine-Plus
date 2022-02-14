@@ -182,6 +182,12 @@ $sql = "UPDATE `users` SET `username`='$usr_new_username',`ranglevel`='$usr_new_
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
 	echo "<script>Swal.fire({ icon: 'success', title: 'Informatie Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
+    //AuditLog start
+    $audit_user = $gebruikersid;
+    $audit_actie = "Gebruiker bijgewerkt";
+    $audit_info = "Gebruiker " . $usr_new_username . " gewijzigd";
+    include_once("./infogetters/aditlog.php");
+    //AuditLog end
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

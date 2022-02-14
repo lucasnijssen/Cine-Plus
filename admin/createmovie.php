@@ -124,6 +124,13 @@ $sql = "INSERT INTO `movies`(`movie_id`, `cover`, `cdn`, `title`, `image`, `info
 if ($conn->query($sql) === TRUE) {
     $lid = mysqli_insert_id($conn);
     echo "<script>Swal.fire({ icon: 'success', title: 'Film Opgeslagen', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = '/admin/show.php?id=" . $lid . "'; })</script>";
+        //AuditLog start
+        $audit_user = $gebruikersid;
+        $audit_actie = "Film Aangemaakt";
+        $audit_info = "Gebruiker maakte film" . $new_title . " aan";
+        include_once("./infogetters/aditlog.php");
+        //AuditLog end
+
 } else {
     echo '<script>swal.fire("Er ging iets mis...", "Je hebt waarschijnlijk ergens een APOSTROF teken gebruikt. <b>DAT KAN NIET, STOP IT</b>.", "error");</script>';
 }

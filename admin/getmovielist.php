@@ -53,6 +53,12 @@ $sql = "DELETE FROM `movies` WHERE `id` = $deleteprod_id";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
 	echo "<script>Swal.fire({ icon: 'success', title: 'Film verwijderd', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('?delmov=". $deleteprod_id . "', ''); window.location.href = red; })</script>";
+        //AuditLog start
+        $audit_user = $gebruikersid;
+        $audit_actie = "Verwijderde Film";
+        $audit_info = "Gebruiker heeft de film een film verwijderd";
+        include_once("./infogetters/aditlog.php");
+        //AuditLog end
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
