@@ -159,6 +159,12 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO `admin_alerts`(`short`, `text`, `type`) VALUES ('$new_title','$new_bericht','$new_type')";
 if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
+        //AuditLog start
+        $audit_user = $gebruikersid;
+        $audit_actie = "Admin alert verzonden";
+        $audit_info = "Gebruiker verstuurde een alert met titel " . $new_title . ".";
+        include_once("./infogetters/aditlog.php");
+        //AuditLog end
 
 
 } else {

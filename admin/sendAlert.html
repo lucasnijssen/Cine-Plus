@@ -96,6 +96,7 @@ include_once("../phplib/config.php");
         let title = document.getElementById("titel").value;
         let bericht = document.getElementById("bericht").value;
         ws.send(JSON.stringify({ id: "send-admin-alert", titel: title, text: bericht }));
+        ws.send(JSON.stringify({ id: "audit-log", user: "JAVASCRIPT", actie: "Admin Systeem Notifactie verstuurd", info: "Verstuurde notificatie met titel " + title }));
         Swal.fire({ icon: 'success', title: 'Alert Verzonden', showConfirmButton: false, timer: 3000, });
     }
 </script>
