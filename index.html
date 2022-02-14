@@ -127,11 +127,9 @@ include_once("./phplib/datacheck.php");
     <div class="row">
       <h2>CINEPLUS FILMS</h2>
       <div class="row__posters" id="txtHint">
-        <script>
-          $.post( "https://api.cine-plus.nl/getMovies.php", function( data ) {
-            document.getElementById("txtHint").innerHTML = data;
-});
-          </script>
+        <?php
+        include_once("./data/getMovies.php");
+        ?>
 
       </div>
     </div>
@@ -163,7 +161,7 @@ include_once("./phplib/datacheck.php");
       <h2>Educatie</h2>
       <div class="row__posters">
         <?php
-        include_once("/data/movEd.php");
+        include_once("./data/movEd.php");
         ?>
       </div>
     </div>

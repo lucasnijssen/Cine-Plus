@@ -19,7 +19,7 @@ $sql="SELECT * FROM movies";
 $result = mysqli_query($con,$sql);
 
 while($row = mysqli_fetch_array($result)) {
-  echo '<a class="triggerModal" onclick="createModal(`' . $row['movie_id'] . '`)" data-mid="' . $row['movie_id'] . '"> <img class="row__poster row_posterLarge" src="' . $row['cover'] . '" alt="" /></a>';
+  echo '<a id="test" class="triggerModal" onclick="createModal(`' . $row['movie_id'] . '`)"> <img class="row__poster row_posterLarge" src="' . $row['cover'] . '" alt="" /></a>';
 }
 mysqli_close($con);
 ?>
