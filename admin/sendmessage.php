@@ -71,7 +71,7 @@ include_once("../phplib/config.php");
                                 </div>
                                 <?php if($gebruikersid = 1) : ?>
                                 <div class="form-group">
-                                    <label>Bericht Titel</label>
+                                    <label>Systeem Bericht?</label>
                                     <input class="form-check-input" type="checkbox" value="" name="sysmes">
                                 </div>
                                 <?php endif; ?>
