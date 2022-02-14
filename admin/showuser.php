@@ -107,7 +107,7 @@ $conn->close();
                                 </div><br>
                                 <div class="form-group">
                                     <label>Rang</label>
-                                    <?php if($usr_rang >= 20) : ?>
+                                    <?php if($usr_rang >= 19) : ?>
                                     <select class="form-control" disabled name="rang">
                                         <option value="<?php echo $usr_rang; ?>"><?php echo $usr_rang_name; ?></option>
                                         <option value="2">Banned</option>
