@@ -56,7 +56,6 @@ app.ws('/server', ws => {
           }
           if(obj2.id == 'online-users'){
             sendOne("total-online", aWss.clients.size);
-            console.log(aWss.clients.size);
             return;
           }
           if(obj2.id == 'send-admin-alert'){
