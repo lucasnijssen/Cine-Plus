@@ -162,7 +162,7 @@ if ($conn->query($sql) === TRUE) {
     $audit_conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
     if ($audit_conn->connect_error) { die("Connection failed: " . $audit_conn->connect_error); }
     $audit_sql = "INSERT INTO `audit_log` (`gebruiker`, `actie`, `info`) VALUES ('$audit_user','$audit_actie','$audit_info')";
-    if ($audit_conn->query($audit_sql) === TRUE) { } else { }
+    if ($audit_conn->query($audit_sql) === TRUE) { $audit_conn->close(); } else { $audit_conn->close(); }
     //Audit log end
 
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
@@ -177,7 +177,7 @@ if ($conn->query($sql) === TRUE) {
     $headers = array ('Content-type' => 'text/html;charset=iso-8859-1', 'From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
     $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $usname, 'password' => $password));
     $mail = $smtp->send($to, $headers, $email_body);
-
+    $conn->close();
 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
