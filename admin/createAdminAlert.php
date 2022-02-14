@@ -30,7 +30,7 @@ include_once("../phplib/config.php");
                 <hr class="sidebar-divider my-0">
                 <?php include_once('nav.php'); ?>
                 <?php
-                if($usr_rank < 20){
+                if($usr_rank < 19){
                     header("location: index.html");
                 }
                 ?>
@@ -89,7 +89,35 @@ include_once("../phplib/config.php");
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="card shadow">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="text-primary fw-bold m-0">Verzonden Alerts</h6>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Titel</th>
+                                            <th>Text</th>
+                                            <th>Actie</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php include_once('./infogetters/getAdminAlerts.php'); ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Titel</strong></td>
+                                            <td><strong>Afzender</strong></td>
+                                            <td><strong>Actie</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
                     <div class="text-center my-auto copyright"><span>Copyright © Cine-Plus Admin 2022</span></div>

@@ -32,6 +32,8 @@ if ($result->num_rows > 0) {
             $usr_rang_name = "Super Admin";
         }else if($usr_rang == 20){
             $usr_rang_name = "Owner";
+        }else if($usr_rang == 19){
+            $usr_rang_name = "Lead-Developer";
         }else if($usr_rang < 4){
             $usr_rang_name = "Banned";
         }else{
