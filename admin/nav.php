@@ -1,5 +1,6 @@
 <?php
 include_once("checkrank.php");
+include_once("..//data/trackers.php");
 ?>
 <link rel="stylesheet" href="assets/bootstrap/css/custom.css?v=21">
 <ul class="navbar-nav text-light" id="accordionSidebar">
