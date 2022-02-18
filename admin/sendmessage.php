@@ -165,7 +165,7 @@ if ($conn->query($sql) === TRUE) {
     require_once "Mail.php";
     require_once "./infogetters/adminmailconfig.php";
     $to = $new_usermail;
-    $email_from = "Cine-Plus Admin <no-reply@mailer.cine-plus.nl>";
+    $email_from = "Cine-Plus <no-reply@mailer.cine-plus.nl>";
     $email_subject = "[ADMIN] Je hebt een nieuw bericht ontvangen" ;
     $email_body = '<p>Je hebt een nieuwe bericht ontangen in het admin portal.</b><br><br>Met vriendelijke groet,<br>Cine-Plus';
     $email_address = "welcome@registration.cine-plus.nl";
