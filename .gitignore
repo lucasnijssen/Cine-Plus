@@ -1,2 +1,3 @@
 server/.env
 phplib/mailerconfig.php
+admin/infogetters/adminmailconfig.php

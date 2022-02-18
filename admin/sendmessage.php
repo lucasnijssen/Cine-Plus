@@ -163,7 +163,7 @@ if ($conn->query($sql) === TRUE) {
     //AuditLog end
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
     require_once "Mail.php";
-    require_once "../phplib/mailerconfig.php";
+    require_once "./infogetters/adminmailconfig.php";
     $to = $new_usermail;
     $email_from = "Cine-Plus <welcome@registration.cine-plus.nl>";
     $email_subject = "[ADMIN] Je hebt een nieuw bericht ontvangen" ;
