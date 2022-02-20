@@ -26,11 +26,22 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $user_sessionid = $row["sesid"];
+        $user_subtype = $row["sub"];
     }
 } else {
 
 }
 $conn->close();
+
+if($user_subtype == 1){
+    $data_subtype = "Basic";
+}else if($user_subtype == 2){
+    $data_subtype = "Unlimited";
+}else if($user_subtype == 3){
+    $data_subtype = "Medewerker Abonnement";
+}else{
+    $data_subtype = "Geen abonnement";
+}
 
 if($user_sessionid == $phsid){
     
