@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once("../phplib/config.php");
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 // Check connection
@@ -6,13 +7,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST["zoek"]) || !empty($_POST["zoek"])){
-    $zoek = $_POST["zoek"];
-    $sql = "SELECT * FROM `audit_log` WHERE `actie` LIKE '%" . $zoek . "%'";
-}else{
-    $gebid = $_SESSION["id"]
-    $sql = "SELECT * FROM `audit_log` WHERE gebruiker= $gebid";
-}
+$gebid = $_SESSION["id"]
+$sql = "SELECT * FROM `audit_log` WHERE gebruiker= $gebid";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
