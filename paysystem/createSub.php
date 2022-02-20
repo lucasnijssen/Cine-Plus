@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 
-function createSub(){
+if($_SERVER['REQUEST_METHOD'] == "POST"){
     $url = "https://api.stripe.com/v1/billing_portal/sessions";
 
     $curl = curl_init($url);
@@ -50,11 +50,6 @@ function createSub(){
     $obj = json_decode($resp);
     $sendurl = $obj->{'url'};
     echo $sendurl;
-    return $sendurl;
 }
+
 ?>
-<script>
-    function relocate_home(){
-         location.href = "<?php echo createSub(); ?>";
-    }
-</script>

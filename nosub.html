@@ -12,15 +12,14 @@ include_once("./paysystem/createSub.php");
     </script>
     <body style="overflow: hidden;">
         <div class="login-dark" style="background-image:url(&quot;/images/cineplusloginbg.png&quot;);">
-            <form method="post" action="./verify.html">
+            <form method="post" action="./nosub.html">
                 <h2 class="sr-only">Geen abonnement</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 <p>
                     Je hebt geen abonnement voor Cine-Plus<br>
                     <small>Als u denkt dat dit een fout is, neem contact op met onze helpdesk.</small>
                 </p>
-                
-                <div class="form-group"><button class="btn btn-primary btn-block" value="Input Button" onclick="<?php createSub(); ?>>" type="button">Abonement nemen</button></div>
+                <div class="form-group"><input type="submit" class="btn btn-primary btn-block" value="Abonement nemen" /></div>
                 <div class="form-group"><button class="btn btn-secondary btn-block" value="Input Button" onclick=" logout()" type="button">Uitloggen</button></div>
               </form>
         </div>
