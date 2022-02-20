@@ -1,6 +1,5 @@
 <?php 
 include_once "config.php";
-include_once "../paysystem/checkSubStatus.php";
 $gebruikersid = $_SESSION["id"];
 
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
