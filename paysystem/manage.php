@@ -13,7 +13,7 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = "customer=cus_LBTIj5VgikBKjO&return_url=https://dev.cine-plus.nl";
+$data = "customer=$dta_usr_stripeid&return_url=https://dev.cine-plus.nl/user-settings.html";
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -25,8 +25,12 @@ $resp = curl_exec($curl);
 curl_close($curl);
 $json = json_encode($resp);
 $obj = json_decode($resp);
-$sendurl = $obj->{'url'};
-
-echo $sendurl;
+$stripe_klantportaal = $obj->{'url'};
 
 ?>
+
+<script>
+   function goManager(){
+      window.open(url, '<?php echo $stripe_klantportaal; ?>').focus();
+   }
+</script>
