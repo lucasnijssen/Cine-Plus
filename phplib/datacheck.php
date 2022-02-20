@@ -39,7 +39,7 @@ if($dta_usr_stripeid == null){
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     
-    $data = "name=$dta_usr_mail";
+    $data = "name=$dta_usr_mail&email=$dta_usr_mail";
     
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     
