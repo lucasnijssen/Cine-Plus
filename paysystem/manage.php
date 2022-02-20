@@ -1,4 +1,5 @@
 <?php
+require_once('vendor/autoload.php');
 \Stripe\Stripe::setApiKey('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');
 
 // Authenticate your user.
