@@ -1,6 +1,6 @@
 <?php 
 include_once "../phplib/config.php";
-$gebruikersid = $_SESSION["id"];
+$uuuid = $_SESSION["id"];
 
 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
 // Check connection
@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "select * from users WHERE id = '$gebruikersid'";
+$sql = "select * from users WHERE id = '$uuuid'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
