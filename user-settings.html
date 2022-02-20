@@ -110,7 +110,7 @@ include_once("./paysystem/manage.php");
 						<p>Je betaalinstellingen worden beheerd via onze partner stripe.</p>
 						<p>Klik hieronder om je betaalinstellingen te bekijken bij Stripe.</p>
 						<div>
-							<button target="_blank" href="<?php echo $stripe_klantportaal; ?>" id="goSettings" class="btn btn-primary">Naar betaalinstellingen</button>
+							<a href="<?php echo $stripe_klantportaal; ?>;" target="_blank" id="goSettings" class="btn btn-primary">Naar betaalinstellingen</a>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
@@ -213,9 +213,3 @@ include_once("./paysystem/manage.php");
     <script src="/JS/main.js?v=5"></script>
     <script src="/JS/bootstrap.min.js"></script>
 </body>
-
-<script>
-	function goManager(){
-	   window.open(url, '<?php echo $stripe_klantportaal; ?>').focus();
-	}
- </script>
