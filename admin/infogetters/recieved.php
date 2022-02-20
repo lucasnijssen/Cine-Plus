@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo '<td>' . $row["message_short"] . '</td>';
 
-        $senderid = $row["getter"];
+        $senderid = $row["user"];
         $conn2 = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
         if($senderid == "s"){
             $sendername = "Systeem";

@@ -9,7 +9,7 @@ include_once("..//data/trackers.php");
         <div class="dropdown-menu">
             <a class="dropdown-item" style="padding-top:0rem" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Bericht Sturen</span></a>
             <a class="dropdown-item" href="ontvangen.html"><i class="fas fa-envelope"></i><span>Ontvangen</span></a>
-            <a class="dropdown-item" href="sendmessage.php"><i class="fas fa-envelope"></i><span>Verzonden</span></a>
+            <a class="dropdown-item" href="verzonden.html"><i class="fas fa-envelope"></i><span>Verzonden</span></a>
         </div>
     </li>
 
