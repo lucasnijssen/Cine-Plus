@@ -1,37 +1,66 @@
 <?php
+include_once("../phplib/config.php");
+include_once("../phplib/datacheck.php");
+$url = "https://api.stripe.com/v1/customers";
 
-require 'vendor/autoload.php';
-// This is your test secret API key.
-\Stripe\Stripe::setApiKey('pk_test_51KV5gDC4DanyFX8I5u6Dp96HzZ8782djgNIDbgVtYLBZAmbNGBKveEMNcBvTehDFeOpMQLkNDXRWpjQJzNjU2DjS007p8cLjRu');
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-header('Content-Type: application/json');
+$headers = array(
+   "Authorization: Bearer $strkey",
+   "Content-Type: application/x-www-form-urlencoded",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$YOUR_DOMAIN = 'http://localhost:4242/public';
+$data = "name=$dta_usr_mail";
 
-try {
-  $prices = \Stripe\Price::all([
-    // retrieve lookup_key from form data POST body
-    'lookup_keys' => ['basic'],
-    'expand' => ['data.product']
-  ]);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
-  $checkout_session = \Stripe\Checkout\Session::create([
-    'line_items' => [[
-      'price' => $prices->data[0]->id,
-      'quantity' => 1,
-    ]],
-    'mode' => 'subscription',
-    'success_url' => $YOUR_DOMAIN . '/success.html?session_id={CHECKOUT_SESSION_ID}',
-    'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
-    'subscription_data' => [
-        'trial_period_days' => 14,
-      ],
-  ]);
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-  header("HTTP/1.1 303 See Other");
-  header("Location: " . $checkout_session->url);
-} catch (Error $e) {
-  http_response_code(500);
-  echo json_encode(['error' => $e->getMessage()]);
+$resp = curl_exec($curl);
+curl_close($curl);
+$json = json_encode($resp);
+$obj = json_decode($resp);
+$new_customerid = $obj->{'id'};
+
+if(isset($new_customerid)){
+
+
+    $url = "https://api.stripe.com/v1/billing_portal/sessions";
+
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+    $headers = array(
+       "Authorization: Bearer $strkey",
+       "Content-Type: application/x-www-form-urlencoded",
+    );
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    
+    $data = "customer=cus_LBTIj5VgikBKjO&return_url=https://dev.cine-plus.nl";
+    
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    
+    //for debug only!
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+    $resp = curl_exec($curl);
+    curl_close($curl);
+    $json = json_encode($resp);
+    $obj = json_decode($resp);
+    $sendurl = $obj->{'url'};
+    
+    header("location: $sendurl");
+
 }
+
 ?>
+

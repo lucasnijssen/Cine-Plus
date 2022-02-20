@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $verstat = $row["verify"];
         $level = $row["ranglevel"];
+        $dta_usr_mail = $row["username"];
     }
 } else {
 
