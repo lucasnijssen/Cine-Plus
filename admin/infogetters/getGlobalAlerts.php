@@ -6,7 +6,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM `admin_global_alerts` LIMIT 10";
+$sql = "SELECT * FROM `admin_global_alerts` ORDER BY `datum` DESC LIMIT 10";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
