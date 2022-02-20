@@ -17,6 +17,9 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 var_dump($resp);
-
+$json = json_encode($resp);
+$obj = json_decode($resp);
+$check_paytype = $obj->{'invoice_settings'}->{'default_payment_method'};
+echo "<script> console.log('$check_paytype'); </script>"
 ?>
 
