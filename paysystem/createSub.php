@@ -49,8 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $json = json_encode($resp);
     $obj = json_decode($resp);
     $checkStripeStat = $obj->{'status'};
-    echo $obj->{'status'};
-        if($checkStripeStat == "trailing" || $checkStripeStat == "active"){
+        if($checkStripeStat == "trialing" || $checkStripeStat == "active"){
             $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "UPDATE `users` SET `sub`=1 WHERE `username` = '$dta_usr_mail'";
