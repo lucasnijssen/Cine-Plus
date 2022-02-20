@@ -21,6 +21,7 @@ if ($result->num_rows > 0) {
 
 }
 $conn->close();
+echo $dta_usr_stripeid;
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $url = "https://api.stripe.com/v1/billing_portal/sessions";
