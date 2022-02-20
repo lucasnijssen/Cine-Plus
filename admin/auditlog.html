@@ -49,7 +49,12 @@
                     <h3 class="text-dark mb-4">Auditlogboek</h3>
                     <div class="card shadow">
                         <div class="card-header d-flex justify-content-between align-items-center">
+                            <?php if($usr_rank >= 19) : ?>
+                            <h6 class="text-primary fw-bold m-0">Algemene auditlog</h6>
+                            <?php endif; ?>
+                            <?php if($usr_rank < 19) : ?>
                             <h6 class="text-primary fw-bold m-0">Jouw auditlog</h6>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="card-body">
