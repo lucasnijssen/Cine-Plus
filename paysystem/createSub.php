@@ -1,4 +1,27 @@
 <?php
+include_once "../phplib/config.php";
+$gebruikersid = $_SESSION["id"];
+
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "select * from users WHERE id = '$gebruikersid'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $dta_usr_mail = $row["username"];
+        $dta_usr_stripeid = $row["stripe_id"];
+    }
+} else {
+
+}
+$conn->close();
+
 function createSub(){
     $url = "https://api.stripe.com/v1/billing_portal/sessions";
 
