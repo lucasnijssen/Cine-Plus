@@ -33,4 +33,8 @@ $stripe_klantportaal = $obj->{'url'};
    function goManager(){
       window.open(url, '<?php echo $stripe_klantportaal; ?>').focus();
    }
+   document.getElementById('goSettings').onclick = function() {
+    var redirectWindow = window.open('<?php echo $stripe_klantportaal; ?>', '_blank');
+    redirectWindow.location;
+};
 </script>
