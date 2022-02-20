@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$gebid = $_SESSION["id"]
+$gebid = $_SESSION["id"];
 $sql = "SELECT * FROM `audit_log` WHERE gebruiker= $gebid";
 
 $result = $conn->query($sql);
