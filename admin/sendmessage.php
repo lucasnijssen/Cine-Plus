@@ -69,7 +69,7 @@ include_once("../phplib/config.php");
                                     <label>Bericht Titel</label>
                                     <input type="text" class="form-control" required name="titel" maxlength="32" placeholder="Zet hier een korte titel neer">
                                 </div>
-                                <?php if($_SESSION["id"] = 1) : ?>
+                                <?php if($_SESSION["id"] == 1) : ?>
                                 <div class="form-group">
                                     <label>Systeem Bericht?</label>
                                     <input class="form-check-input" type="checkbox" value="" name="sysmes">
