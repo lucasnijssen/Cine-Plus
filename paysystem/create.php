@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 // This is your test secret API key.
-\Stripe\Stripe::setApiKey('sk_test_51KV5gDC4DanyFX8IAubEueAj8Yjy39UTpUMrWS3wqJoNfrs9TU53MofRW61BMGwqNFNs9YPWTgrvpI4AG6gXsGbp00kW4bMe1v');
+\Stripe\Stripe::setApiKey('pk_test_51KV5gDC4DanyFX8I5u6Dp96HzZ8782djgNIDbgVtYLBZAmbNGBKveEMNcBvTehDFeOpMQLkNDXRWpjQJzNjU2DjS007p8cLjRu');
 
 header('Content-Type: application/json');
 
