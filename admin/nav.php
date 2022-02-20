@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
 include_once("checkrank.php");
 include_once("..//data/trackers.php");

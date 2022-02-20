@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
     include_once("../phplib/config.php");
     $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);

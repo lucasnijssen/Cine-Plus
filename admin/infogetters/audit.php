@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php 
 session_start();
 include_once("../phplib/config.php");

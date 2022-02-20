@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
   require_once "Mail.php";

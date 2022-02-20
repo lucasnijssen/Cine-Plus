@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
 header('Access-Control-Allow-Origin: *', false);
 ?>

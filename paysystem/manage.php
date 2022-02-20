@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
 include_once("../phplib/config.php");
 $url = "https://api.stripe.com/v1/billing_portal/sessions";

@@ -1,3 +1,4 @@
+<!-- Project: Cine-Plus. Code Author: Boyke van Vugt. -->
 <?php
  ini_set('session.gc_maxlifetime', 864000);
  session_set_cookie_params(864000);
