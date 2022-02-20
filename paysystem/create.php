@@ -28,7 +28,10 @@ $json = json_encode($resp);
 $obj = json_decode($resp);
 $new_customerid = $obj->{'id'};
 
-$url = "https://api.stripe.com/v1/billing_portal/sessions";
+if(isset($new_customerid)){
+
+
+    $url = "https://api.stripe.com/v1/billing_portal/sessions";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -41,7 +44,7 @@ $url = "https://api.stripe.com/v1/billing_portal/sessions";
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     
-    $data = "customer=cus_LBTIj5VgikBKjO&return_url=https://dev.cine-plus.nl";
+    $data = "customer=$new_customerid&return_url=https://dev.cine-plus.nl";
     
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     
@@ -56,6 +59,8 @@ $url = "https://api.stripe.com/v1/billing_portal/sessions";
     $sendurl = $obj->{'url'};
     echo $sendurl;
     header("location: $sendurl");
+
+}
 
 ?>
 
