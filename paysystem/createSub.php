@@ -50,6 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $obj = json_decode($resp);
     $sendurl = $obj->{'url'};
     echo $sendurl;
+    header("location: $sendurl");
 }
 
 ?>
