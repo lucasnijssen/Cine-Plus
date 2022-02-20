@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/login.css" />
+<title>Cine-Plus geen Abonnement!</title>
+<?php
+include_once("./data/trackers.php");
+?>
+<script>
+    function relocate_home(){
+         location.href = "https://buy.stripe.com/aEU8zWadG1ie6QgeUU";
+    }
+    function logout(){
+         location.href = "./logout.html";
+    }
+    </script>
+    <body style="overflow: hidden;">
+        <div class="login-dark" style="background-image:url(&quot;/images/cineplusloginbg.png&quot;);">
+            <form method="post" action="./verify.html">
+                <h2 class="sr-only">Geen abonnement</h2>
+                <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                <p>
+                    Je hebt geen abonnement voor Cine-Plus<br>
+                    <small>Als u denkt dat dit een fout is, neem contact op met onze helpdesk.</small>
+                </p>
+                
+                <div class="form-group"><button class="btn btn-primary btn-block" value="Input Button" onclick=" relocate_home()" type="button">Abonement nemen</button></div>
+              </form>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/JS/ws-main.js?v=5"></script>
+    </body>
+<script>
+window.onload = function() {
+
+var pageTitle = document.title;
+var attentionMessage = 'Je hebt nog geen sub';
+
+document.addEventListener('visibilitychange', function(e) {
+  var isPageActive = !document.hidden;
+
+  if(!isPageActive){
+    document.title = attentionMessage;
+  }else {
+    document.title = pageTitle;
+  }
+});
+};
+</script>
