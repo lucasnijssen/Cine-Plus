@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo '<td>' . $row["message_short"] . '</td>';
 
-        $senderid = $row["user"];
+        $senderid = $row["getter"];
         $conn2 = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
         if($senderid == "s"){
             $sendername = "Systeem";
@@ -35,9 +35,9 @@ if ($result->num_rows > 0) {
         $messtat = $row["readed"];
 
         if($messtat == 0){
-            $readstat = '<i style="margin-right:0rem;" class="fas fa-envelope"></i>';
+            $readstat = '<i style="margin-right:0rem;" class="fa fa-envelope"></i>';
         }else{
-            $readstat = '<i style="margin-right:0rem;" class="fas fa-envelope-open-o"></i>';
+            $readstat = '<i style="margin-right:0rem;" class="fa fa-envelope-open-o"></i>';
         }
         echo '<td>' . $sendername . '</td>';
         echo '<td>' . $readstat . '</td>';
