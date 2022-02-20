@@ -8,9 +8,13 @@ if ($conn->connect_error) {
 
 if(isset($_POST["zoek"]) || !empty($_POST["zoek"])){
     $zoek = $_POST["zoek"];
-    $sql = "SELECT * FROM `audit_log` WHERE `actie` LIKE '%" . $zoek . "%'";
+    if(is_numeric($zoek) == true){
+        $sql = "SELECT * FROM `audit_log` LIMIT $zoek";
+    }else{
+        $sql = "SELECT * FROM `audit_log` WHERE `actie` LIKE '%" . $_POST["zoek"] . "%'";
+    }
 }else{
-    $sql = "SELECT * FROM `audit_log`";
+    $sql = "SELECT * FROM `audit_log` LIMIT 50";
 }
 
 $result = $conn->query($sql);
@@ -19,8 +23,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
         $conn2 = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
-        $ulogid = $row["id"];
-        $sql3 = "select * from users WHERE id=$ulogid";
+        $sql3 = 'select * from users WHERE id=' . $row["gebruiker"] . '';
             $result3 = $conn2->query($sql3);
             if ($result3->num_rows > 0) {
                 while($row2 = $result3->fetch_assoc()) {
@@ -29,7 +32,7 @@ if ($result->num_rows > 0) {
                 } else {
                     $sendername = "Onbekend";
                 }
-        $conn2->close();
+        
         echo '<td>' . $row["id"] . '</td>';
         echo '<td>' . $sendername . '</td>';
         echo '<td>' . $row["actie"] . '</td>';
@@ -37,6 +40,7 @@ if ($result->num_rows > 0) {
         $date = date('m-d-Y H:i', strtotime($row["datum"]));
         echo '<td>' . $date . '</td>';
         echo '</tr>';
+        $conn2->close();
     }
 } else {
     echo "<tr>";
@@ -49,4 +53,5 @@ if ($result->num_rows > 0) {
     echo '</tr>';
 }
 $conn->close();
+
 ?>
