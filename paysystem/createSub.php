@@ -22,8 +22,6 @@ if ($result->num_rows > 0) {
 
 }
 $conn->close();
-echo $dta_usr_stripeid;
-
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $url = "https://api.stripe.com/v1/subscriptions";
 
@@ -50,10 +48,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     curl_close($curl);
     $json = json_encode($resp);
     $obj = json_decode($resp);
-    $sendurl = $obj->{'url'};
-    echo $sendurl;
-    print_r($obj);
-    header("location: $sendurl");
+    $checkStripeStat = $obj->{'status'};
+        if($checkStripeStat == "trailing" || $checkStripeStat == "active"){
+            $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+            if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+            $sql = "UPDATE `users` SET `sub`=1 WHERE `username` = '$dta_usr_mail'";
+            if ($conn->query($sql) === TRUE) { } else { echo "Error: " . $sql . "<br>" . $conn->error; }
+            $conn->close();
+            header("location: index.html");
+        }
 }
 
 ?>
