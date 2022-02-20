@@ -76,6 +76,40 @@ include_once("../phplib/config.php");
                         </div>
                     </div>
                 </div>
+                <?php if($usr_rank >= 19) : ?>
+                <br><br>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Verzonden Alerts</h3>
+                    <div class="card shadow">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="text-primary fw-bold m-0">Laatste 10 verzonden berichten</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Titel</th>
+                                            <th>Text</th>
+                                            <th>Actie</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php include_once('./infogetters/getAdminAlerts.php'); ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Titel</strong></td>
+                                            <td><strong>Text</strong></td>
+                                            <td><strong>Actie</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
