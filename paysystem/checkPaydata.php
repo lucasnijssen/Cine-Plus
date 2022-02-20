@@ -20,6 +20,11 @@ var_dump($resp);
 $json = json_encode($resp);
 $obj = json_decode($resp);
 $check_paytype = $obj->{'invoice_settings'}->{'default_payment_method'};
-echo "<script> console.log('$check_paytype'); </script>"
+if($check_paytype == null || $check_paytype == "null"){
+    echo "<script> console.log('Geen betaalmethode'); </script>";
+}else{
+    echo "<script> console.log('$check_paytype'); </script>";
+}
+
 ?>
 
