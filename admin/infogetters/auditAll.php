@@ -10,7 +10,7 @@ if(isset($_POST["zoek"]) || !empty($_POST["zoek"])){
     $zoek = $_POST["zoek"];
     $sql = "SELECT * FROM `audit_log` WHERE `actie` LIKE '%" . $zoek . "%'";
 }else{
-    $sql = "SELECT * FROM `audit_log` WHERE gebruiker= $_SESSION['id']";
+    $sql = "SELECT * FROM `audit_log`";
 }
 
 $result = $conn->query($sql);
