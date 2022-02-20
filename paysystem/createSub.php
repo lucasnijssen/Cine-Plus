@@ -25,7 +25,7 @@ $conn->close();
 echo $dta_usr_stripeid;
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-    $url = "https://api.stripe.com/v1/billing_portal/sessions";
+    $url = "https://api.stripe.com/v1/subscriptions";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     
-    $data = "customer=cus_LBjJZO77hlug3Y&items[0][price]=price_1KV5sIC4DanyFX8In3lN2wb8&trial_period_days=14";
+    $data = "customer=$dta_usr_stripeid&items[0][price]=price_1KV5sIC4DanyFX8In3lN2wb8&trial_period_days=14";
     
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     
