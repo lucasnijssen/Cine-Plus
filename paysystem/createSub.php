@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../phplib/config.php");
 $gebruikersid = $_SESSION["id"];
 
@@ -37,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
     
-    $data = "customer=$dta_usr_stripeid&return_url=https://dev.cine-plus.nl";
+    $data = "customer=cus_LBjJZO77hlug3Y&items[0][price]=price_1KV5sIC4DanyFX8In3lN2wb8&trial_period_days=14";
     
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     
