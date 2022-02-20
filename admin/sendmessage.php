@@ -143,7 +143,7 @@ $conn2->close();
 if(isset($_POST['sysmes'])){
     $new_afzender = "s";
 }else{
-    $new_afzender = $gebruikersid;
+    $new_afzender = $_SESSION["id"];
 }
 
 
@@ -152,7 +152,7 @@ if ($conn->query($sql) === TRUE) {
     echo "<script>Swal.fire({ icon: 'success', title: 'Bericht Verzonden', showConfirmButton: false, timer: 3000, }).then((result) => { let url = window.location.href; let red = url.replace('#', ''); window.location.href = red; })</script>";
 
     //AuditLog start
-    $audit_user = $gebruikersid;
+    $audit_user = $_SESSION["id"];
     $audit_actie = "Bericht verzonden";
     if($new_afzender == "s"){
         $audit_info = "Bericht verstuurd aan " . $new_usermail . " als Systeem";
