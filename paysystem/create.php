@@ -28,10 +28,7 @@ $json = json_encode($resp);
 $obj = json_decode($resp);
 $new_customerid = $obj->{'id'};
 
-if(isset($new_customerid)){
-
-
-    $url = "https://api.stripe.com/v1/billing_portal/sessions";
+$url = "https://api.stripe.com/v1/billing_portal/sessions";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -57,10 +54,8 @@ if(isset($new_customerid)){
     $json = json_encode($resp);
     $obj = json_decode($resp);
     $sendurl = $obj->{'url'};
-    
+    echo $sendurl;
     header("location: $sendurl");
-
-}
 
 ?>
 
