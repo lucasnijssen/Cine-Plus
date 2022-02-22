@@ -1,6 +1,10 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Cine-Plus.nl",
+    "short_name": "cine plus",
+    "start_url": "https://cine-plus.nl",
+    "display": "standalone",
+    "background_color": "#111",
+    "discription": "Watch the best movies.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,8 +16,6 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    ]
+    
 }
