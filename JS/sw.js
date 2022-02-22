@@ -1,44 +1,26 @@
-const cacheName = 'cine-v1';
-const staticAssets = [
- './',
- './index',
- './style.css'
-]
-self.addEventListener('install', async e => {
- const cache = await caches.open(cacheName);
- await cache.addAll(staticAssets);
- return self.skipWaiting();
+var cacheName = 'cine-plus-v1';
+var filesToCache = [
+  '/',
+  '/index.html',
+  '/css/style.css',
+  '/JS/main.js'
+];
+
+/* Start the service worker and cache all of the app's content */
+self.addEventListener('install', function(e) {
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(filesToCache);
+    })
+  );
+  self.skipWaiting();
 });
 
-self.addEventListener('activate', e => {
-    self.clients.claim();
+/* Serve cached content when offline */
+self.addEventListener('fetch', function(e) {
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
 });
-
-self.addEventListener('fetch', async e => {
-    const req = e.request;
-    const url = new URL(req.url);
-
-    if (url.origin == location.origin) {
-        e.respondWith(cacheFirst(req));
-    } else {
-        e.respondWith(networkAndCache(req));
-    }
-});
-
-async function cacheFirst(req) {
-    const cache = await caches.open(cacheName);
-    const cached = await cache.match(req);
-    return cached || fetch(req);
-}
-
-async function networkAndCache(req) {
-    const cache = await caches.open(cacheName);
-    try {
-        const fresh = await fetch(req);
-        await cache.put(req, fresh.clone());
-        return fresh;
-    } catch (e) {
-        const cached = await cashe.match(req);
-        return cached;
-    }
-}

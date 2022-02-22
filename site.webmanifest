@@ -1,7 +1,7 @@
 {
     "name": "Cine-Plus.nl",
     "short_name": "cine plus",
-    "start_url": "https://cine-plus.nl",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#111",
     "discription": "Watch the best movies.",

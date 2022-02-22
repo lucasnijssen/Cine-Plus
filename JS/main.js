@@ -3,6 +3,14 @@ const moviename = document.querySelector("[data-mid]");
 const trigger = document.querySelector(".triggerModal");
 const closeButton = document.querySelector(".close-button");
 
+window.onload = () => {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+}
 function toggleModal() {
   modal.classList.toggle("show-modalOverlay");
   document.querySelectorAll('[id=test]').forEach(element=> {
@@ -52,17 +60,4 @@ document.addEventListener('keydown', (event) => {
 		}
   });
 
-  window.addEventListener('load', () => {
-    registerSW
-  });
- 
-  async function registerSW() {
-    if ('serviceWorker' in navigator) {
-      try{
-        await navigator.serviceWorker.register('./sw.js');
-      } catch (e) {
-        console.log('SW registration failed');
-      }
-    }
-  }
 
