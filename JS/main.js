@@ -11,6 +11,7 @@ window.onload = () => {
              .register('./sw.js');
   }
 }
+
 function toggleModal() {
   modal.classList.toggle("show-modalOverlay");
   document.querySelectorAll('[id=test]').forEach(element=> {
