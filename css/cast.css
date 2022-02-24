@@ -1,0 +1,26 @@
+/*
+  Author: Lucas Nijssen (@lucasnijssen)
+  Creation-date: 24-02-2022
+  Project: Cine-Plus Cast SDK
+*/
+
+.background {
+    background: center no-repeat url(/img/bg.png);
+  }
+  
+  .logo {
+    background-image: url(/img/logo.png);
+  }
+  
+  .progressBar {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  .splash {
+    background-image: url(splash.png);
+  }
+  
+  .watermark {
+    background-image: url(watermark.png);
+    background-size: 57px 57px;
+  }
