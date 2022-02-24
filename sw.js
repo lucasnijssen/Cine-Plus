@@ -1,7 +1,5 @@
 var cacheName = 'cine-plus-v1';
 var filesToCache = [
-  '/',
-  '/index.html',
   '/css/style.css',
   '/JS/main.js'
 ];
