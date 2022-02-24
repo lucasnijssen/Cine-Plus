@@ -72,38 +72,40 @@ include_once("./paysystem/manage.php");
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 						<h3 class="mb-4">Account Settings</h3>
+					<form method="post" action="./user-settings.html">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Voornaam</label>
-								  	<input type="text" class="form-control" value="Kiran">
+								  	<input type="text" name="voornaam" class="form-control" value="Kiran">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Achternaam</label>
-								  	<input type="text" class="form-control" value="Acharya">
+								  	<input type="text" name="achternaam" class="form-control" value="Acharya">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Email</label>
-								  	<input type="text" class="form-control" value="kiranacharya287@gmail.com">
+								  	<input type="text" name="email" class="form-control" value="kiranacharya287@gmail.com">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Telefoonnummer</label>
-								  	<input type="text" class="form-control" value="+91 9876543215">
+								  	<input type="text" name="telefoon" class="form-control" value="+91 9876543215">
 								</div>
 							</div>
 							<div class="col-md-12">
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-primary">Update</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 							<button class="btn btn-light">Cancel</button>
 						</div>
+					</form>
 					</div>
 					<div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="password-tab">
 						<h3 class="mb-4">Billing Settings</h3>
