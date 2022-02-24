@@ -10,6 +10,7 @@
   
   .logo {
     background-image: url(/img/logo.png);
+    background-size: 40%;
   }
   
   .progressBar {
